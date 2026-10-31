@@ -1,77 +1,54 @@
-# Barbearia Assinatura — Studio Privativo • Mestre Barbeiro
+# Barbearia Assinatura — Barbeiro
 
-Landing page profissional, moderna e sofisticada desenvolvida sob medida para **Barbeiro Solo / Estúdio Privativo**, combinando estética masculina refinada (preto, grafite e toques dourados), atendimento 100% individual a portas fechadas e **Hero com vídeo cinematográfico de fundo em alta performance**.
-
----
-
-## 💎 Características e Proposta do Estúdio Privativo
-
-1. **Posicionamento Exclusivo (Barbeiro Solo):**
-   - **Uma cadeira, um cliente por horário:** Total privacidade e silêncio, sem a agitação, conversas paralelas ou filas de salão comercial tradicional.
-   - **Sempre as mesmas mãos:** O cliente é atendido sempre pelo mesmo profissional experiente, garantindo consistência técnica em todos os cortes.
-   - **Visagismo Individual:** Consultoria dedicada às proporções do rosto e formato dos fios antes de iniciar cada procedimento.
-
-2. **Identidade Visual de Alto Padrão:**
-   - Paleta escura sofisticada (`#080808`, `#0F0F11`, `#151518`) com acentos em degradê dourado champanhe (`#C5A880`, `#D4AF37`) e branco puro para máximo contraste e legibilidade.
-   - Tipografia premium: `Cinzel` (display marcante para títulos e monogramas) combinada com `Plus Jakarta Sans` (geométrica e limpa para leitura perfeita).
-
-3. **Hero com Vídeo Cinematográfico de Fundo:**
-   - Ocupa 100% da altura da tela (`min-h-screen`) com vídeo nativo em alta definição (`autoplay`, `loop`, `muted`, `playsinline`, sem controles aparentes).
-   - Camada escura com vinheta suave e degradê vertical garantindo legibilidade absoluta dos textos e botões.
-   - Frase de impacto: *"SEU ESTILO. MINHA ASSINATURA."*
-   - Vídeo otimizado de carregamento ultra rápido (3.5MB local) + fallback CDN + poster fotográfico de alta definição.
-
-4. **Seção Sobre Mim & O Estúdio:**
-   - Layout em duas colunas: fotografia com moldura dourada e selo *"Studio Privativo"* + narrativa pessoal.
-   - 4 pilares destacados: *Atendimento 100% Individual*, *Sempre as Mesmas Mãos*, *Visagismo Sob Medida* e *Privacidade & Conforto Absoluto*.
-
-5. **Cardápio de Serviços e Preços Facilmente Editáveis:**
-   - Cards com duração estimada, ícones exclusivos, valores em destaque dourado e botão individual de agendamento.
-   - Todos os botões abrem o WhatsApp com **mensagem personalizada pré-preenchida com o nome do serviço escolhido**.
-
-6. **Galeria de Cortes com Lightbox Modal:**
-   - Grade contínua e limpa de trabalhos reais executados pelo barbeiro.
-   - Clique em qualquer fotografia para abrir a visualização em alta definição com navegação por setas (mouse ou teclado: `Esc`, `←`, `→`).
-
-7. **Diferenciais do Estúdio:**
-   - 5 pilares fundamentais: *Atendimento 100% Individual*, *Sempre as Mesmas Mãos*, *Ambiente Privativo & Conforto*, *Cosméticos & Higiene Rigorosa* e *Pontualidade & Zero Espera*.
-
-8. **Localização e Contato:**
-   - Endereço do estúdio nos Jardins (São Paulo).
-   - Mapa interativo estilizado no tema escuro.
-   - Botão direto para traçar rota no Google Maps.
-   - Links diretos para Telefone, WhatsApp e Instagram.
-   - *(Conforme especificado, não exibe horários de funcionamento).*
-
-9. **Chamada Final & Botão Flutuante de WhatsApp:**
-   - Banner de fechamento de alto impacto convidando para a reserva do horário exclusivo.
-   - Botão flutuante de WhatsApp no canto inferior com animação de pulso para agendamento instantâneo no celular ou computador.
-
-10. **SEO e Otimização:**
-    - Meta tags completas de SEO local para barbearia privativa.
-    - OpenGraph e Twitter Cards para compartilhamento em redes sociais.
-    - Dados Estruturados Schema.org (`BarberShop` / `LocalBusiness`) em JSON-LD para mecanismos de busca.
+Landing page profissional, moderna e visualmente impactante para **Barbeiro Solo**, combinando estética refinada (preto, grafite e toques dourados), atendimento pontual e **Hero com vídeo de fundo em alta performance**.
 
 ---
 
-## 🛠️ Como Personalizar Informações (Muito Fácil!)
+## 💈 Características do Site
 
-Todos os dados comerciais, serviços, preços, fotos e contatos estão centralizados em **[`src/data.js`](src/data.js)**.
+1. **Posicionamento Real e Direto:**
+   - **Trabalho bem feito no capricho:** Foco no degradê limpo, corte na tesoura e barba alinhada na navalha.
+   - **Sempre o mesmo barbeiro:** O cliente senta na cadeira sabendo exatamente com quem vai cortar.
+   - **Atendimento com hora marcada:** Pontualidade e atenção ao que o cliente realmente quer.
 
-Para alterar o WhatsApp, seu nome ou endereço:
+2. **Identidade Visual Profissional:**
+   - Fundo escuro com acabamento em preto e grafite, detalhes em dourado e tipografia limpa e legível.
+   - Layout responsivo e adaptado para celular, tablet e computador.
+
+3. **Hero com Vídeo de Fundo:**
+   - Vídeo de alta qualidade em reprodução contínua e sem controles, mostrando o trabalho na máquina e na navalha.
+   - Camada escura para garantir excelente legibilidade dos textos e botões de agendamento.
+
+4. **Serviços e Preços Claros:**
+   - Cards com duração estimada, valores e botão individual de agendamento com mensagem pré-formatada no WhatsApp.
+
+5. **Galeria de Cortes:**
+   - Fotografias de trabalhos reais com visualização ampliada ao clicar.
+
+6. **Localização e Contato:**
+   - Endereço completo, mapa interativo, botão de rota no Google Maps, telefone e WhatsApp direto.
+   - *(Sem exibição de horários de funcionamento).*
+
+---
+
+## 🛠️ Como Personalizar Informações
+
+Todos os dados de contato, serviços, preços e textos ficam em **[`src/data.js`](src/data.js)**.
+
+Para alterar o WhatsApp, nome ou endereço:
 ```javascript
 // src/data.js
 export const barbershopConfig = {
   name: "ASSINATURA",
-  subtitle: "STUDIO PRIVADO • MASTER BARBER",
+  subtitle: "BARBEIRO",
   barberName: "Lucas Silva",
   phone: "(38) 98839-9608",
-  whatsappNumber: "5538988399608", // Apenas números: DDI (55) + DDD + Telefone
+  whatsappNumber: "5538988399608",
   instagramUrl: "https://instagram.com/barbearia.assinatura",
   address: {
     street: "Rua Oscar Freire",
     number: "1280",
-    complement: "Sala 42 - Estúdio Privativo",
+    complement: "Sala 42",
     neighborhood: "Jardins",
     city: "São Paulo",
     state: "SP",
@@ -81,31 +58,9 @@ export const barbershopConfig = {
 };
 ```
 
-Para editar, adicionar ou remover serviços e valores:
-```javascript
-// src/data.js
-services: [
-  {
-    id: "corte-masculino",
-    name: "Corte Masculino",
-    price: "R$ 65",
-    duration: "45 min",
-    description: "Corte completo na tesoura ou máquina com consultoria de visagismo...",
-    featured: false,
-    icon: "scissors"
-  },
-  // adicione novos serviços aqui facilmente!
-]
-```
-
 ---
 
 ## 🚀 Como Executar o Projeto Localmente
-
-### Pré-requisitos
-- Node.js instalado (v18 ou superior).
-
-### Passo a Passo
 
 1. **Instalar as dependências:**
    ```bash
@@ -116,32 +71,8 @@ services: [
    ```bash
    npm run dev
    ```
-   Abra no seu navegador o endereço indicado (ex: `http://localhost:3000`).
 
 3. **Gerar a versão de produção:**
    ```bash
    npm run build
    ```
-   Os arquivos finais ultra otimizados serão gerados na pasta **`dist/`**, prontos para serem hospedados em qualquer servidor (Vercel, Netlify, GitHub Pages, Hostinger, cPanel, Apache, Nginx, etc.).
-
----
-
-## 📁 Estrutura de Arquivos
-
-```
-barber-video/
-├── dist/                      # Build de produção otimizado
-├── public/
-│   └── assets/
-│       └── video/
-│           └── barber-hero.mp4 # Vídeo cinematográfico de fundo (3.5MB)
-├── src/
-│   ├── data.js                # Central de dados: serviços, preços, textos e links
-│   ├── icons.js               # Biblioteca de ícones SVG de alta definição
-│   ├── main.js                # Lógica do site: menu, galeria, lightbox e WhatsApp
-│   └── style.css              # Diretivas Tailwind e estilização de luxo
-├── index.html                 # Estrutura semântica e SEO
-├── tailwind.config.js         # Configurações de cores e fontes
-├── vite.config.mjs            # Configuração do Vite
-└── package.json               # Scripts e dependências
-```
