@@ -1,51 +1,56 @@
-# Barbearia Assinatura — Website Premium
+# Barbearia Assinatura — Studio Privativo • Mestre Barbeiro
 
-Website profissional, moderno e sofisticado desenvolvido para barbearias de alto padrão, combinando estética masculina refinada (preto, grafite e toques dourados), tipografia clássica contemporânea e **Hero com vídeo cinematográfico de fundo em alta performance**.
+Landing page profissional, moderna e sofisticada desenvolvida sob medida para **Barbeiro Solo / Estúdio Privativo**, combinando estética masculina refinada (preto, grafite e toques dourados), atendimento 100% individual a portas fechadas e **Hero com vídeo cinematográfico de fundo em alta performance**.
 
 ---
 
-## 💎 Características e Funcionalidades
+## 💎 Características e Proposta do Estúdio Privativo
 
-1. **Identidade Visual de Alto Padrão:**
+1. **Posicionamento Exclusivo (Barbeiro Solo):**
+   - **Uma cadeira, um cliente por horário:** Total privacidade e silêncio, sem a agitação, conversas paralelas ou filas de salão comercial tradicional.
+   - **Sempre as mesmas mãos:** O cliente é atendido sempre pelo mesmo profissional experiente, garantindo consistência técnica em todos os cortes.
+   - **Visagismo Individual:** Consultoria dedicada às proporções do rosto e formato dos fios antes de iniciar cada procedimento.
+
+2. **Identidade Visual de Alto Padrão:**
    - Paleta escura sofisticada (`#080808`, `#0F0F11`, `#151518`) com acentos em degradê dourado champanhe (`#C5A880`, `#D4AF37`) e branco puro para máximo contraste e legibilidade.
    - Tipografia premium: `Cinzel` (display marcante para títulos e monogramas) combinada com `Plus Jakarta Sans` (geométrica e limpa para leitura perfeita).
 
-2. **Hero com Vídeo Cinematográfico de Fundo:**
+3. **Hero com Vídeo Cinematográfico de Fundo:**
    - Ocupa 100% da altura da tela (`min-h-screen`) com vídeo nativo em alta definição (`autoplay`, `loop`, `muted`, `playsinline`, sem controles aparentes).
    - Camada escura com vinheta suave e degradê vertical garantindo legibilidade absoluta dos textos e botões.
+   - Frase de impacto: *"SEU ESTILO. MINHA ASSINATURA."*
    - Vídeo otimizado de carregamento ultra rápido (3.5MB local) + fallback CDN + poster fotográfico de alta definição.
 
-3. **Seção Sobre com Composição Fotográfica:**
-   - Layout em duas colunas: fotografia com moldura dourada e selo "Desde 2018" + narrativa institucional.
-   - 4 pilares destacados: *Qualidade no Atendimento*, *Profissionalismo de Elite*, *Atenção aos Detalhes* e *Experiência e Cuidado Personalizado*.
-   - Grade de números e métricas comprovando a tradição da barbearia.
+4. **Seção Sobre Mim & O Estúdio:**
+   - Layout em duas colunas: fotografia com moldura dourada e selo *"Studio Privativo"* + narrativa pessoal.
+   - 4 pilares destacados: *Atendimento 100% Individual*, *Sempre as Mesmas Mãos*, *Visagismo Sob Medida* e *Privacidade & Conforto Absoluto*.
 
-4. **Cardápio de Serviços e Preços Facilmente Editáveis:**
+5. **Cardápio de Serviços e Preços Facilmente Editáveis:**
    - Cards com duração estimada, ícones exclusivos, valores em destaque dourado e botão individual de agendamento.
    - Todos os botões abrem o WhatsApp com **mensagem personalizada pré-preenchida com o nome do serviço escolhido**.
 
-5. **Galeria de Cortes com Filtro por Categoria e Lightbox Modal:**
-   - Categorias: *Todos*, *Degradê*, *Corte Social*, *Corte Clássico*, *Barba* e *Transformações*.
+6. **Galeria de Cortes com Lightbox Modal:**
+   - Grade contínua e limpa de trabalhos reais executados pelo barbeiro.
    - Clique em qualquer fotografia para abrir a visualização em alta definição com navegação por setas (mouse ou teclado: `Esc`, `←`, `→`).
 
-6. **Diferenciais da Marca:**
-   - 5 pilares fundamentais: Atendimento Personalizado (Visagismo), Barbeiros Qualificados, Ambiente Confortável (Lounge & Cerveja Artesanal), Produtos de Alta Performance e Compromisso/Pontualidade.
+7. **Diferenciais do Estúdio:**
+   - 5 pilares fundamentais: *Atendimento 100% Individual*, *Sempre as Mesmas Mãos*, *Ambiente Privativo & Conforto*, *Cosméticos & Higiene Rigorosa* e *Pontualidade & Zero Espera*.
 
-7. **Localização e Contato:**
-   - Endereço completo nos Jardins (São Paulo).
+8. **Localização e Contato:**
+   - Endereço do estúdio nos Jardins (São Paulo).
    - Mapa interativo estilizado no tema escuro.
    - Botão direto para traçar rota no Google Maps.
    - Links diretos para Telefone, WhatsApp e Instagram.
    - *(Conforme especificado, não exibe horários de funcionamento).*
 
-8. **Chamada Final & Botão Flutuante de WhatsApp:**
-   - Banner de fechamento de alto impacto convidando para a reserva.
+9. **Chamada Final & Botão Flutuante de WhatsApp:**
+   - Banner de fechamento de alto impacto convidando para a reserva do horário exclusivo.
    - Botão flutuante de WhatsApp no canto inferior com animação de pulso para agendamento instantâneo no celular ou computador.
 
-9. **SEO e Otimização:**
-   - Meta tags completas de SEO local.
-   - OpenGraph e Twitter Cards para compartilhamento em redes sociais.
-   - Dados Estruturados Schema.org (`BarberShop` / `LocalBusiness`) em JSON-LD para mecanismos de busca.
+10. **SEO e Otimização:**
+    - Meta tags completas de SEO local para barbearia privativa.
+    - OpenGraph e Twitter Cards para compartilhamento em redes sociais.
+    - Dados Estruturados Schema.org (`BarberShop` / `LocalBusiness`) em JSON-LD para mecanismos de busca.
 
 ---
 
@@ -53,17 +58,20 @@ Website profissional, moderno e sofisticado desenvolvido para barbearias de alto
 
 Todos os dados comerciais, serviços, preços, fotos e contatos estão centralizados em **[`src/data.js`](src/data.js)**.
 
-Para alterar o WhatsApp, nome da barbearia ou endereço:
+Para alterar o WhatsApp, seu nome ou endereço:
 ```javascript
 // src/data.js
 export const barbershopConfig = {
   name: "ASSINATURA",
+  subtitle: "STUDIO PRIVADO • MASTER BARBER",
+  barberName: "Lucas Silva",
   phone: "(11) 98765-4321",
   whatsappNumber: "5511987654321", // Apenas números: DDI (55) + DDD + Telefone
   instagramUrl: "https://instagram.com/barbearia.assinatura",
   address: {
     street: "Rua Oscar Freire",
     number: "1280",
+    complement: "Sala 42 - Estúdio Privativo",
     neighborhood: "Jardins",
     city: "São Paulo",
     state: "SP",
@@ -82,7 +90,7 @@ services: [
     name: "Corte Masculino",
     price: "R$ 65",
     duration: "45 min",
-    description: "Corte completo na tesoura ou máquina com visagismo facial...",
+    description: "Corte completo na tesoura ou máquina com consultoria de visagismo...",
     featured: false,
     icon: "scissors"
   },

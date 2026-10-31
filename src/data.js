@@ -2,77 +2,73 @@
  * ===================================================================
  * BARBEARIA ASSINATURA — CONFIGURAÇÃO CENTRAL & DADOS DO SITE
  * ===================================================================
- * Edite facilmente as informações da barbearia, serviços, preços,
- * contatos e galeria neste único arquivo.
+ * Configuração personalizada para BARBEIRO ÚNICO (Estúdio Privativo).
+ * Edite facilmente suas informações, serviços, preços, fotos e contatos.
  */
 
 export const barbershopConfig = {
-  // Dados Comerciais & Contato
+  // Dados Pessoais & Contato
   name: "ASSINATURA",
-  subtitle: "BARBEARIA & CLUB",
+  subtitle: "STUDIO PRIVADO • MASTER BARBER",
+  barberName: "Lucas Silva",
   tagline: "Tradição no corte. Personalidade no estilo.",
   phone: "(11) 98765-4321",
   phoneFormatted: "+5511987654321",
   whatsappNumber: "5511987654321", // Apenas números com DDI + DDD
-  whatsappDefaultMessage: "Olá! Gostaria de agendar um horário na Barbearia Assinatura.",
+  whatsappDefaultMessage: "Olá! Gostaria de agendar um horário exclusivo no estúdio privativo.",
   instagramUrl: "https://instagram.com/barbearia.assinatura",
   instagramHandle: "@barbearia.assinatura",
   
-  // Endereço e Geolocalização
+  // Endereço e Geolocalização do Estúdio
   address: {
     street: "Rua Oscar Freire",
     number: "1280",
+    complement: "Sala 42 - Estúdio Privativo",
     neighborhood: "Jardins",
     city: "São Paulo",
     state: "SP",
     cep: "01426-000",
-    full: "Rua Oscar Freire, 1280 - Jardins, São Paulo - SP, 01426-000",
+    full: "Rua Oscar Freire, 1280, Sala 42 - Jardins, São Paulo - SP, 01426-000",
     googleMapsLink: "https://maps.google.com/?q=Rua+Oscar+Freire+1280+Jardins+Sao+Paulo",
     embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.146958897597!2d-46.66986402377317!3d-23.56316277879783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d0426b647b%3A0x6b2b7ff9c2ff1b06!2sR.%20Oscar%20Freire%2C%201280%20-%20Cerqueira%20C%C3%A9sar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001426-000!5e0!3m2!1spt-BR!2sbr!4v1714500000000!5m2!1spt-BR!2sbr",
   },
 
   // Mídias do Banner Principal (Hero)
   hero: {
-    title: "SEU ESTILO. NOSSA ASSINATURA.",
-    subtitle: "Mais do que um corte, uma experiência feita para valorizar seu estilo e sua personalidade.",
+    title: "SEU ESTILO. MINHA ASSINATURA.",
+    subtitle: "Atendimento 100% individual e exclusivo em estúdio privativo. Uma experiência feita sob medida para valorizar sua imagem.",
     videoUrl: "./assets/video/barber-hero.mp4",
     videoAltUrl: "https://assets.mixkit.co/videos/43242/43242-720.mp4",
     posterUrl: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1920&q=80",
     ctaPrimary: "AGENDAR MEU HORÁRIO",
-    ctaSecondary: "CONHEÇA NOSSO TRABALHO",
+    ctaSecondary: "CONHEÇA MEU TRABALHO",
   },
 
-  // Sobre a Barbearia
+  // Sobre o Barbeiro & Proposta do Estúdio Privativo
   about: {
-    badge: "DESDE 2018",
+    badge: "STUDIO PRIVATIVO",
     title: "TRADIÇÃO NO CORTE. PERSONALIDADE NO ESTILO.",
     paragraphs: [
-      "Nascemos com a missão de resgatar a nobre arte da barbearia clássica, unindo-a ao visagismo contemporâneo e às técnicas mais refinadas do mercado internacional.",
-      "Aqui, cada cliente recebe um atendimento individualizado e detalhista. Do corte com tesoura milimetricamente alinhado à barba com toalha quente e navalha afiada, tudo é pensado para que você relaxe, renove sua imagem e saia com a confiança em seu ápice.",
-      "Nosso espaço foi cuidadosamente projetado para proporcionar conforto absoluto: poltronas vintage em couro legítimo, carta de cervejas artesanais selecionadas, cafés especiais e um ambiente acolhedor onde o tempo desacelera."
-    ],
-    stats: [
-      { value: "8+", label: "Anos de Tradição" },
-      { value: "15k+", label: "Clientes Atendidos" },
-      { value: "100%", label: "Produtos Importados" },
-      { value: "5.0 ★", label: "Avaliação Média" },
+      "Acredito que o corte de cabelo e o desenho da barba são sua assinatura visual mais marcante. Por isso, criei um espaço onde o conceito de barbearia tradicional se une ao atendimento privativo e reservado de alto padrão.",
+      "Aqui você não é apenas mais um cliente numa fila de espera. O estúdio opera a portas fechadas, com atendimento exclusivo a um único cliente por horário. Dedico tempo integral para entender suas preferências, analisar os traços do seu rosto com técnicas de visagismo e entregar um acabamento impecável.",
+      "Um ambiente reservado, confortável e silencioso, equipado com o que há de mais refinado em ferramentas e cosméticos de padrão internacional, pensado para que você desacelere e renove sua imagem com confiança máxima."
     ],
     highlights: [
       {
-        title: "Qualidade no Atendimento",
-        desc: "Pontualidade britânica, recepção com café especial ou drink artesanal e atenção exclusiva a cada detalhe."
+        title: "Atendimento 100% Individual",
+        desc: "Apenas uma cadeira e um cliente por horário. O estúdio é inteiramente seu durante o atendimento, sem interrupções nem pressa."
       },
       {
-        title: "Profissionalismo de Elite",
-        desc: "Barbeiros premiados com certificações internacionais e atualização constante em tendências mundiais."
+        title: "Sempre as Mesmas Mãos",
+        desc: "Você sempre será atendido exclusivamente por mim. Consistência absoluta, sem surpresas e com padrão inegociável de qualidade."
       },
       {
-        title: "Atenção Minuciosa aos Detalhes",
-        desc: "Estudo visagista das proporções do seu rosto para encontrar o corte e o contorno de barba perfeitos."
+        title: "Visagismo Sob Medida",
+        desc: "Análise aprofundada da estrutura do seu rosto, densidade dos fios e redemoinhos para alinhar corte e barba ao seu estilo de vida."
       },
       {
-        title: "Experiência e Cuidado Personalizado",
-        desc: "Toalhas aquecidas com óleos essenciais, massagem facial relaxante e produtos dermatologicamente testados."
+        title: "Privacidade & Conforto Absoluto",
+        desc: "Ambiente reservado a portas fechadas, café espresso nobre, cerveja artesanal selecionada e total discrição."
       }
     ],
     imagePrimary: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85",
@@ -88,7 +84,7 @@ export const barbershopConfig = {
       price: "R$ 65",
       priceRaw: 65,
       duration: "45 min",
-      description: "Corte completo na tesoura ou máquina com análise de visagismo facial, lavagem especial refrescante e finalização com pomada premium.",
+      description: "Corte completo na tesoura ou máquina com consultoria de visagismo facial, lavagem refrescante e styling com pomada nobre.",
       featured: false,
       badge: null,
       icon: "scissors",
@@ -100,7 +96,7 @@ export const barbershopConfig = {
       price: "R$ 75",
       priceRaw: 75,
       duration: "50 min",
-      description: "Transição milimétrica impecável (Skin Fade, Mid Fade, Taper ou Low Fade). Linhas nítidas, acabamento na shaver e navalhete com precisão cirúrgica.",
+      description: "Transição milimétrica cirúrgica (Skin Fade, Mid Fade, Taper ou Low Fade). Linhas nítidas, acabamento na shaver e navalhete com precisão máxima.",
       featured: true,
       badge: "Mais Pedido",
       icon: "zap",
@@ -112,7 +108,7 @@ export const barbershopConfig = {
       price: "R$ 55",
       priceRaw: 55,
       duration: "40 min",
-      description: "Modelagem completa da barba com aplicação de óleos aromáticos, protocolo de toalha quente, navalha descartável e pós-barba refrescante com massagem.",
+      description: "Escultura e modelagem da barba com aplicação de óleos aromáticos, toalha aquecida, navalha descartável e pós-barba refrescante com massagem.",
       featured: false,
       badge: null,
       icon: "sparkles",
@@ -124,7 +120,7 @@ export const barbershopConfig = {
       price: "R$ 110",
       priceRaw: 110,
       duration: "1h 20min",
-      description: "A experiência completa de transformação e alinhamento do seu visual. Inclui corte personalizado, barboterapia tradicional, higienização e styling com economia.",
+      description: "A experiência completa de transformação no estúdio privativo. Inclui corte personalizado, barboterapia tradicional, higienização e styling com economia.",
       featured: true,
       badge: "Melhor Custo-Benefício",
       icon: "crown",
@@ -148,7 +144,7 @@ export const barbershopConfig = {
       price: "R$ 25",
       priceRaw: 25,
       duration: "15 min",
-      description: "Limpeza e alinhamento natural na navalha ou pinça, preservando a harmonia e a expressão masculina sem aspecto artificial.",
+      description: "Limpeza e alinhamento natural na navalha ou pinça, preservando a harmonia e a expressão masculina com discrição e naturalidade.",
       featured: false,
       badge: null,
       icon: "eye",
@@ -160,35 +156,26 @@ export const barbershopConfig = {
       price: "R$ 70",
       priceRaw: 70,
       duration: "30 min",
-      description: "Tonalização suave e discreta dos fios brancos (cabelo ou barba). Resultado 100% natural que rejuvenesce sem parecer tintura.",
+      description: "Tonalização suave e sutil dos fios brancos (cabelo ou barba). Resultado 100% natural que rejuvenesce sem aspecto artificial de tintura.",
       featured: false,
       badge: null,
       icon: "feather",
     },
     {
       id: "tratamento-capilar",
-      name: "Tratamento Capilar & Escova",
+      name: "Tratamento Capilar & Detox",
       category: "Tratamentos",
       price: "R$ 60",
       priceRaw: 60,
       duration: "35 min",
-      description: "Detox do couro cabeludo, hidratação profunda antifrizz e fortalecimento dos fios com produtos específicos masculinos de alta performance.",
+      description: "Detox do couro cabeludo, hidratação profunda antifrizz e fortalecimento dos fios com cosméticos masculinos de alta performance.",
       featured: false,
       badge: null,
       icon: "shield",
     }
   ],
 
-  // Galeria de Trabalhos Reais com Categorias
-  galleryCategories: [
-    { id: "todos", name: "Todos" },
-    { id: "degrade", name: "Degradê" },
-    { id: "social", name: "Corte Social" },
-    { id: "classico", name: "Corte Clássico" },
-    { id: "barba", name: "Barba" },
-    { id: "transformacoes", name: "Transformações" },
-  ],
-
+  // Galeria de Trabalhos Reais Executados Exclusivamente pelo Barbeiro
   galleryItems: [
     {
       id: 1,
@@ -213,7 +200,7 @@ export const barbershopConfig = {
       category: "classico",
       categoryName: "Corte Clássico",
       title: "Pompadour Tradicional com Brilho Médio",
-      description: "Estrutura clássica dos anos 50 com tesoura, volume no topete e pomada hidrossolúvel de brilho elegante.",
+      description: "Estrutura clássica com tesoura, volume no topete e pomada de fixação elegante.",
       imageUrl: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1000&q=85",
       thumbnailUrl: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80",
     },
@@ -231,7 +218,7 @@ export const barbershopConfig = {
       category: "degrade",
       categoryName: "Degradê",
       title: "Mid Fade com Linhas Marcadas",
-      description: "Graduação na altura média da têmpora com transição suave e pezinho esculpido a navalha.",
+      description: "Graduação na têmpora com transição suave e pezinho esculpido a navalha.",
       imageUrl: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=85",
       thumbnailUrl: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80",
     },
@@ -300,56 +287,56 @@ export const barbershopConfig = {
     }
   ],
 
-  // Diferenciais Exclusivos da Barbearia
+  // Diferenciais Exclusivos do Barbeiro Solo (Studio Privativo)
   differentials: [
     {
       icon: "user-check",
-      title: "Atendimento Personalizado",
-      description: "Consultoria individual de visagismo para identificar o corte e desenho de barba que mais harmonizam com o formato do seu rosto e seu estilo de vida."
+      title: "Atendimento 100% Individual",
+      description: "Uma cadeira, um cliente por horário. O estúdio fica a portas fechadas, reservado inteiramente para você, garantindo tranquilidade, foco e discrição total."
     },
     {
       icon: "award",
-      title: "Profissionais Qualificados",
-      description: "Mestres barbeiros em constante aperfeiçoamento nas melhores academias do país e do exterior, dominando tanto o clássico quanto as técnicas de vanguarda."
+      title: "Sempre as Mesmas Mãos",
+      description: "Esqueça a rotatividade de barbeiros. Seu corte e sua barba serão sempre realizados pelo mesmo profissional experiente, conhecedor exato do seu estilo."
     },
     {
       icon: "coffee",
-      title: "Ambiente Confortável & Exclusivo",
-      description: "Espaço intimista com lounge climatizado, poltronas de alta ergonomia, café espresso de grãos nobres e cervejas artesanais selecionadas como cortesia."
+      title: "Ambiente Privativo & Conforto",
+      description: "Sem conversas paralelas ou agitação de salão tradicional. Desfrute de um ambiente climatizado, espresso nobre de grãos selecionados e cerveja artesanal como cortesia."
     },
     {
       icon: "shield-check",
-      title: "Produtos de Alta Performance",
-      description: "Utilizamos exclusivamente linhas profissionais consagradas mundialmente: pomadas com base em argila natural, óleos essenciais puros e tônicos dermatológicos."
+      title: "Cosméticos & Higiene Rigorosa",
+      description: "Lâminas descartáveis descartadas na sua frente, ferramentas esterilizadas em autoclave de grau hospitalar e produtos dermatológicos importados."
     },
     {
       icon: "heart-handshake",
-      title: "Compromisso com Cada Cliente",
-      description: "Horários agendados rigorosamente respeitados, higiene esterilizada em autoclave de grau hospitalar e garantia total de satisfação com o resultado."
+      title: "Pontualidade & Zero Espera",
+      description: "Horários agendados rigorosamente respeitados. Você não perde tempo na recepção e recebe atendimento dedicado com todo o tempo que seu corte merece."
     }
   ],
 
   // Chamada Final (CTA)
   finalCta: {
     title: "SEU PRÓXIMO CORTE COMEÇA AQUI.",
-    text: "Reserve seu horário e venha viver uma experiência diferente.",
+    text: "Reserve seu horário exclusivo e garanta seu atendimento individual no estúdio privativo.",
     buttonText: "AGENDAR PELO WHATSAPP",
-    subtext: "Atendimento rápido e confirmação imediata pelo WhatsApp",
+    subtext: "Atendimento exclusivo com hora marcada • Confirmação direta no WhatsApp",
   },
 
   // Rodapé e Links
   footer: {
-    description: "Uma barbearia pensada para homens que valorizam precisão, sofisticação e uma experiência que vai muito além de um simples corte.",
+    description: "Estúdio privativo de barbearia focado em atendimento 100% individual, visagismo e acabamento de alto padrão. Uma experiência sob medida para homens exigentes.",
     links: [
       { label: "Início", href: "#inicio" },
-      { label: "Sobre nós", href: "#sobre" },
+      { label: "Sobre mim", href: "#sobre" },
       { label: "Serviços", href: "#servicos" },
       { label: "Galeria", href: "#galeria" },
       { label: "Diferenciais", href: "#diferenciais" },
       { label: "Contato & Localização", href: "#contato" },
     ],
-    copyright: "© {year} Barbearia Assinatura. Todos os direitos reservados.",
-    tagline: "Feito com excelência para quem exige o melhor."
+    copyright: "© {year} Barbearia Assinatura • Studio Privado. Todos os direitos reservados.",
+    tagline: "Atendimento individual e exclusivo para quem exige o melhor."
   }
 };
 
@@ -361,7 +348,7 @@ export function getWhatsAppBookingUrl(serviceName = null) {
   let text = barbershopConfig.whatsappDefaultMessage;
   
   if (serviceName) {
-    text = `Olá! Gostaria de agendar o serviço de *${serviceName}* na Barbearia Assinatura. Poderia me informar os horários disponíveis?`;
+    text = `Olá! Gostaria de agendar o serviço de *${serviceName}* no estúdio privativo. Poderia me informar os horários disponíveis?`;
   }
   
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
