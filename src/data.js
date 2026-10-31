@@ -1,23 +1,23 @@
 /**
  * ===================================================================
- * BARBEARIA ASSINATURA — CONFIGURAÇÃO CENTRAL & DADOS DO SITE
+ * LEO'S BARBEARIA — CONFIGURAÇÃO CENTRAL & DADOS DO SITE
  * ===================================================================
- * Configuração autêntica e direta para Barbeiro Solo.
- * Sem jargões exagerados, focado em trabalho bem feito e bom atendimento.
+ * Barbeiro solo: Leonardo.
+ * Trabalho honesto, corte no capricho e atendimento exclusivo.
  */
 
 export const barbershopConfig = {
   // Dados Pessoais & Contato
-  name: "ASSINATURA",
-  subtitle: "BARBEIRO",
-  barberName: "Lucas Silva",
+  name: "LEO'S",
+  subtitle: "BARBEARIA",
+  barberName: "Leonardo",
   tagline: "Corte no capricho. Estilo garantido.",
   phone: "(38) 98839-9608",
   phoneFormatted: "+5538988399608",
   whatsappNumber: "5538988399608", // Apenas números com DDI + DDD
   whatsappDefaultMessage: "Olá! Gostaria de agendar um horário para cortar o cabelo.",
-  instagramUrl: "https://instagram.com/barbearia.assinatura",
-  instagramHandle: "@barbearia.assinatura",
+  instagramUrl: "https://instagram.com/leos.barbearia",
+  instagramHandle: "@leos.barbearia",
   
   // Endereço e Geolocalização
   address: {
@@ -35,8 +35,8 @@ export const barbershopConfig = {
 
   // Mídias do Banner Principal (Hero)
   hero: {
-    title: "SEU ESTILO. MINHA ASSINATURA.",
-    subtitle: "Corte masculino bem feito, degradê disfarçado no capricho e barba alinhada na navalha. Atendimento pontual e de confiança.",
+    title: "SEU ESTILO. LEO'S BARBEARIA.",
+    subtitle: "Corte masculino bem feito, degradê disfarçado no capricho e barba alinhada na navalha. Atendimento pontual com o Leonardo.",
     videoUrl: "./assets/video/barber-hero.mp4",
     videoAltUrl: "https://assets.mixkit.co/videos/43242/43242-720.mp4",
     posterUrl: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1920&q=80",
@@ -49,7 +49,7 @@ export const barbershopConfig = {
     badge: "CORTE NO CAPRICHO",
     title: "TRADIÇÃO NO CORTE. PERSONALIDADE NO ESTILO.",
     paragraphs: [
-      "Trabalho sozinho e levo a sério cada cliente que senta na minha cadeira. O meu foco é simples e direto: fazer um trabalho bem feito, com calma, atenção e exatamente do jeito que você gosta.",
+      "Sou o Leonardo, atendo sozinho na Leo's Barbearia e levo a sério cada cliente que senta na minha cadeira. O meu foco é simples e direto: fazer um trabalho bem feito, com calma, atenção e exatamente do jeito que você gosta.",
       "Seja um degradê disfarçado, um corte social clássico na tesoura ou aquele acerto caprichado na barba e no pezinho, você senta, explica como quer e sai com o visual alinhado.",
       "Aqui você não tem surpresas: atendimento direto comigo, sem enrolação e sem pressa, respeitando o seu estilo e o seu tempo."
     ],
@@ -325,7 +325,7 @@ export const barbershopConfig = {
       { label: "Diferenciais", href: "#diferenciais" },
       { label: "Contato & Localização", href: "#contato" },
     ],
-    copyright: "© {year} Barbearia Assinatura. Todos os direitos reservados.",
+    copyright: "© {year} Leo's Barbearia. Todos os direitos reservados.",
     tagline: "Corte no capricho para quem gosta de andar alinhado."
   }
 };
