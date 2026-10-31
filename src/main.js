@@ -299,12 +299,17 @@ function updateLightboxContent() {
   const desc = document.getElementById('lightbox-desc');
   const cat = document.getElementById('lightbox-category');
   const counter = document.getElementById('lightbox-counter');
+  const cta = document.getElementById('lightbox-cta');
 
   if (img) img.src = item.imageUrl;
   if (title) title.textContent = item.title;
   if (desc) desc.textContent = item.description;
   if (cat) cat.textContent = item.categoryName;
   if (counter) counter.textContent = `${currentLightboxIndex + 1} / ${filteredGallery.length}`;
+  if (cta) {
+    const text = encodeURIComponent(`Olá! Vi o corte "${item.title}" na sua galeria e gostaria de fazer esse estilo.`);
+    cta.href = `https://wa.me/5538988399608?text=${text}`;
+  }
 }
 
 /**
