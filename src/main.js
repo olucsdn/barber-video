@@ -174,24 +174,26 @@ let filteredGallery = [];
 function renderGallery() {
   const tabsContainer = document.getElementById('gallery-tabs');
   const gridContainer = document.getElementById('gallery-grid');
-  if (!tabsContainer || !gridContainer) return;
+  if (!gridContainer) return;
 
-  // Render Tabs
-  tabsContainer.innerHTML = barbershopConfig.galleryCategories.map(cat => `
-    <button data-category="${cat.id}"
-            class="gallery-filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${cat.id === currentCategory ? 'bg-gold-500 text-barber-black shadow-lg shadow-gold-500/20' : 'bg-barber-card/80 text-zinc-400 hover:text-white border border-white/5 hover:border-gold-500/30'}">
-      ${cat.name}
-    </button>
-  `).join('');
+  // Render Tabs if container exists
+  if (tabsContainer) {
+    tabsContainer.innerHTML = barbershopConfig.galleryCategories.map(cat => `
+      <button data-category="${cat.id}"
+              class="gallery-filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${cat.id === currentCategory ? 'bg-gold-500 text-barber-black shadow-lg shadow-gold-500/20' : 'bg-barber-card/80 text-zinc-400 hover:text-white border border-white/5 hover:border-gold-500/30'}">
+        ${cat.name}
+      </button>
+    `).join('');
 
-  // Tab click event
-  tabsContainer.querySelectorAll('.gallery-filter-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const cat = e.currentTarget.getAttribute('data-category');
-      currentCategory = cat;
-      renderGallery();
+    // Tab click event
+    tabsContainer.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const cat = e.currentTarget.getAttribute('data-category');
+        currentCategory = cat;
+        renderGallery();
+      });
     });
-  });
+  }
 
   // Filter items
   filteredGallery = currentCategory === 'todos'
@@ -219,10 +221,6 @@ function renderGallery() {
         <p class="text-zinc-300 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
           ${item.description}
         </p>
-        <div class="flex items-center gap-1.5 text-gold-400 text-xs font-semibold mt-3">
-          <span>Clique para ampliar</span>
-          ${icons['arrow-up-right']}
-        </div>
       </div>
     </div>
   `).join('');
