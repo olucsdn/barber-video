@@ -16,8 +16,8 @@ export const barbershopConfig = {
   phoneFormatted: "+5538988399608",
   whatsappNumber: "5538988399608", // Apenas números com DDI + DDD
   whatsappDefaultMessage: "Olá! Gostaria de agendar um horário para cortar o cabelo.",
-  instagramUrl: "https://instagram.com/leos.barbearia",
-  instagramHandle: "@leos.barbearia",
+  instagramUrl: "https://www.instagram.com/leo_cort3z?exln=MWdqaHB1ZnNnOHprcA==",
+  instagramHandle: "@leo_cort3z",
   
   // Endereço e Geolocalização
   address: {
