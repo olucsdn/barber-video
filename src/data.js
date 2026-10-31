@@ -322,7 +322,7 @@ export const barbershopConfig = {
       { label: "Sobre mim", href: "#sobre" },
       { label: "Serviços", href: "#servicos" },
       { label: "Galeria", href: "#galeria" },
-      { label: "Diferenciais", href: "#diferenciais" },
+      { label: "Meu Diferencial", href: "#diferenciais" },
       { label: "Contato & Localização", href: "#contato" },
     ],
     copyright: "© {year} Leo's Barbearia. Todos os direitos reservados.",

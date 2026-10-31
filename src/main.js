@@ -335,11 +335,7 @@ function renderDifferentials() {
   if (!container) return;
 
   container.innerHTML = barbershopConfig.differentials.map((diff, index) => {
-    const iconHtml = icons[diff.icon] || icons['user-check'];
     const isRed = index % 2 === 0;
-    const accentBg = isRed
-      ? 'bg-gradient-to-br from-red-600/20 to-red-800/10 text-red-400 border-red-500/30 group-hover:bg-red-600/25'
-      : 'bg-gradient-to-br from-blue-600/20 to-blue-800/10 text-blue-400 border-blue-500/30 group-hover:bg-blue-600/25';
     const numColor = isRed ? 'text-red-500/60' : 'text-blue-500/60';
     const borderHover = isRed ? 'hover:border-red-500/40' : 'hover:border-blue-500/40';
     const titleHover = isRed ? 'group-hover:text-red-300' : 'group-hover:text-blue-300';
@@ -347,11 +343,8 @@ function renderDifferentials() {
     return `
       <div class="p-8 rounded-2xl bg-barber-card/60 border border-white/5 ${borderHover} transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group shadow-xl">
         <div>
-          <div class="w-14 h-14 rounded-2xl ${accentBg} flex items-center justify-center border group-hover:scale-110 transition-transform duration-300 mb-6">
-            ${iconHtml}
-          </div>
-          <span class="text-xs font-mono ${numColor} font-semibold">0${index + 1}</span>
-          <h3 class="font-display text-xl font-bold text-white mt-1 ${titleHover} transition-colors">
+          <span class="text-xs font-mono ${numColor} font-semibold tracking-wider">0${index + 1}</span>
+          <h3 class="font-display text-xl font-bold text-white mt-3 ${titleHover} transition-colors">
             ${diff.title}
           </h3>
           <p class="text-zinc-400 text-sm mt-3 leading-relaxed">
