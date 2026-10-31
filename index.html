@@ -347,12 +347,12 @@
   </section>
 
   <!-- Lightbox Modal para Ampliação das Fotografias -->
-  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 lg:p-10 modal-backdrop">
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 lg:p-10 modal-backdrop overflow-y-auto">
     
-    <div class="relative max-w-4xl w-full bg-barber-surface border border-gold-500/30 rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh]">
+    <div class="relative max-w-3xl w-full bg-barber-surface border border-gold-500/30 rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh] my-auto">
       
       <!-- Topo do Modal -->
-      <div class="p-4 sm:p-5 flex items-center justify-between border-b border-white/10 bg-barber-black/60 backdrop-blur-md">
+      <div class="shrink-0 p-3.5 sm:p-5 flex items-center justify-between border-b border-white/10 bg-barber-black/60 backdrop-blur-md">
         <div class="flex items-center gap-3">
           <span id="lightbox-category" class="text-[11px] font-semibold tracking-widest uppercase px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 border border-gold-500/30">
             Categoria
@@ -367,29 +367,29 @@
       </div>
 
       <!-- Corpo com Imagem Ampliada -->
-      <div class="relative flex-1 bg-black flex items-center justify-center overflow-hidden min-h-[300px]">
-        <img id="lightbox-img" src="" alt="Trabalho ampliado" class="max-h-[65vh] w-auto max-w-full object-contain mx-auto" />
+      <div class="relative flex-1 min-h-0 bg-black flex items-center justify-center overflow-hidden p-2">
+        <img id="lightbox-img" src="" alt="Trabalho ampliado" class="max-h-[46vh] sm:max-h-[56vh] md:max-h-[60vh] w-auto max-w-full object-contain mx-auto select-none" />
         
         <!-- Botão Anterior -->
-        <button id="lightbox-prev" aria-label="Foto anterior" class="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-barber-black/70 hover:bg-gold-500 hover:text-barber-black text-white border border-white/10 transition-all">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        <button id="lightbox-prev" aria-label="Foto anterior" class="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-barber-black/75 hover:bg-gold-500 hover:text-barber-black text-white border border-white/10 shadow-lg transition-all z-10">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         </button>
 
         <!-- Botão Próximo -->
-        <button id="lightbox-next" aria-label="Próxima foto" class="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-barber-black/70 hover:bg-gold-500 hover:text-barber-black text-white border border-white/10 transition-all">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <button id="lightbox-next" aria-label="Próxima foto" class="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-barber-black/75 hover:bg-gold-500 hover:text-barber-black text-white border border-white/10 shadow-lg transition-all z-10">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </button>
       </div>
 
-      <!-- Rodapé do Modal -->
-      <div class="p-5 bg-barber-surface border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div>
-          <h3 id="lightbox-title" class="font-display font-bold text-white text-lg">Título do Trabalho</h3>
-          <p id="lightbox-desc" class="text-zinc-400 text-xs sm:text-sm mt-1 max-w-xl">Descrição dos detalhes executados.</p>
+      <!-- Rodapé do Modal (Sempre visível, sem corte) -->
+      <div class="shrink-0 p-4 sm:p-5 bg-barber-surface border-t border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <div class="min-w-0">
+          <h3 id="lightbox-title" class="font-display font-bold text-white text-base sm:text-lg truncate">Título do Trabalho</h3>
+          <p id="lightbox-desc" class="text-zinc-400 text-xs sm:text-sm mt-0.5 line-clamp-2">Descrição dos detalhes executados.</p>
         </div>
         <a href="https://wa.me/5538988399608?text=Ol%C3%A1!%20Vi%20esse%20corte%20na%20sua%20galeria%20e%20gostaria%20de%20fazer%20um%20estilo%20parecido."
            target="_blank" rel="noopener noreferrer"
-           class="shrink-0 px-5 py-2.5 rounded-full bg-gold-500 text-barber-black font-bold text-xs uppercase tracking-wider hover:bg-gold-400 transition-colors">
+           class="shrink-0 w-full sm:w-auto text-center px-6 py-2.5 rounded-full bg-gold-500 hover:bg-gold-400 text-barber-black font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-gold-500/20 active:scale-95">
           Quero esse Corte
         </a>
       </div>
