@@ -1,25 +1,25 @@
 /**
  * ===================================================================
- * LEO'S BARBEARIA — CONFIGURAÇÃO CENTRAL & DADOS DO SITE
+ * LEO'S BARBEARIA — DADOS DO SITE & CONFIGURAÇÃO
  * ===================================================================
- * Barbeiro solo: Leonardo.
- * Trabalho honesto, corte no capricho e atendimento exclusivo.
+ * Barbeiro: Leonardo.
+ * Atendimento individual com horário marcado em Montes Claros - MG.
  */
 
 export const barbershopConfig = {
-  // Dados Pessoais & Contato
+  // Identidade & Contato
   name: "LEO'S",
   subtitle: "BARBEARIA",
   barberName: "Leonardo",
-  tagline: "Corte no capricho. Estilo garantido.",
+  tagline: "Corte no capricho. Atendimento individual.",
   phone: "(38) 98839-9608",
   phoneFormatted: "+5538988399608",
-  whatsappNumber: "5538988399608", // Apenas números com DDI + DDD
-  whatsappDefaultMessage: "Olá! Gostaria de agendar um horário para cortar o cabelo.",
+  whatsappNumber: "5538988399608",
+  whatsappDefaultMessage: "Olá, Leonardo! Gostaria de agendar um horário para corte de cabelo.",
   instagramUrl: "https://www.instagram.com/leo_cort3z?exln=MWdqaHB1ZnNnOHprcA==",
   instagramHandle: "@leo_cort3z",
   
-  // Endereço e Geolocalização
+  // Localização Real
   address: {
     street: "R. Um",
     number: "124",
@@ -33,49 +33,50 @@ export const barbershopConfig = {
     embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.6148!2d-43.8140928!3d-16.7018496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x754ab02b5cb4c55%3A0x82a0fed8a64810bc!2sL%C3%89O%20BARBER!5e0!3m2!1spt-BR!2sbr!4v1714500000000!5m2!1spt-BR!2sbr",
   },
 
-  // Mídias do Banner Principal (Hero)
+  // Hero com Vídeo
   hero: {
-    title: "SEU ESTILO. LEO'S BARBEARIA.",
-    subtitle: "Corte masculino bem feito, degradê disfarçado no capricho e barba alinhada na navalha. Atendimento pontual com o Leonardo.",
+    title: "CORTE NO CAPRICHO. ESTILO COM PERSONALIDADE.",
+    subtitle: "Degradê disfarçado, acabamento limpo na navalha e atendimento individualizado com hora marcada.",
     videoUrl: "./assets/video/barber-hero.mp4",
     videoAltUrl: "https://assets.mixkit.co/videos/43242/43242-720.mp4",
-    posterUrl: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1920&q=80",
-    ctaPrimary: "AGENDAR MEU HORÁRIO",
-    ctaSecondary: "CONHEÇA MEU TRABALHO",
+    ctaPrimary: "Agendar pelo WhatsApp",
+    ctaSecondary: "Ver Meus Serviços",
   },
 
-  // Sobre o Barbeiro & O Trabalho do Dia a Dia
+  // Sobre o Barbeiro
   about: {
-    badge: "CORTE NO CAPRICHO",
-    title: "TRADIÇÃO NO CORTE. PERSONALIDADE NO ESTILO.",
+    badge: "Atendimento Individual",
+    title: "TRABALHO HONESTO. ATENÇÃO A CADA CLIENTE.",
     paragraphs: [
-      "Sou o Leonardo, atendo sozinho na Leo's Barbearia e levo a sério cada cliente que senta na minha cadeira. O meu foco é simples e direto: fazer um trabalho bem feito, com calma, atenção e exatamente do jeito que você gosta.",
-      "Seja um degradê disfarçado, um corte social clássico na tesoura ou aquele acerto caprichado na barba e no pezinho, você senta, explica como quer e sai com o visual alinhado.",
-      "Aqui você não tem surpresas: atendimento direto comigo, sem enrolação e sem pressa, respeitando o seu estilo e o seu tempo."
+      "Sou o Leonardo, atendo de forma individualizada na Leo's Barbearia. Meu objetivo é entregar um corte alinhado, bem trabalhado e sem correria.",
+      "Cada cliente tem seu horário reservado e minha total dedicação na cadeira. Aqui você explica exatamente como quer e sai com o visual no capricho.",
     ],
     highlights: [
       {
         title: "Corte no Capricho",
-        desc: "Degradê bem disfarçado, tesoura trabalhada com cuidado e pezinho reto na navalha."
+        desc: "Degradê bem disfarçado, trabalho preciso na tesoura e pezinho reto na navalha."
       },
       {
         title: "Sempre o Mesmo Barbeiro",
-        desc: "Você corta sempre com a mesma pessoa, que já conhece seu cabelo e seu gosto."
+        desc: "Você senta sempre com quem já conhece seu corte, sua cabeça e seu gosto."
       },
       {
-        title: "Atenção a Cada Detalhe",
-        desc: "Tempo dedicado a cada cliente para deixar o corte alinhado e bem finalizado."
+        title: "Atendimento Pontual",
+        desc: "Horário marcado com rigor para você não perder tempo esperando."
       },
       {
-        title: "Sem Fila de Espera",
-        desc: "Atendimento com horário marcado para você não perder tempo esperando."
+        title: "Atenção ao Detalhe",
+        desc: "Tempo suficiente reservado para finalizar cada acabamento com calma."
       }
     ],
-    imagePrimary: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85",
-    imageSecondary: "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?auto=format&fit=crop&w=800&q=85",
+    // Espaço reservado para foto real do barbeiro
+    photoPlaceholder: {
+      label: "Fotografia do Barbeiro",
+      aspect: "aspect-[4/5]",
+    }
   },
 
-  // Serviços e Preços (Reais, Claros e Editáveis)
+  // Serviços e Preços
   services: [
     {
       id: "corte-masculino",
@@ -84,10 +85,8 @@ export const barbershopConfig = {
       price: "R$ 65",
       priceRaw: 65,
       duration: "45 min",
-      description: "Corte completo na tesoura ou máquina, com acabamento no capricho e finalização com pomada.",
+      description: "Corte completo na tesoura ou máquina, acabamento fino do pezinho e finalização com pomada.",
       featured: false,
-      badge: null,
-      icon: "scissors",
     },
     {
       id: "degra-fade",
@@ -96,22 +95,19 @@ export const barbershopConfig = {
       price: "R$ 75",
       priceRaw: 75,
       duration: "50 min",
-      description: "Degradê disfarçado e bem trabalhado (Skin Fade, Mid Fade ou Low Fade). Linhas retas e pezinho feito na navalha.",
+      description: "Disfarçado limpo na navalha ou shaver (Skin Fade, Mid Fade ou Low Fade). Linhas retas e nítidas.",
       featured: true,
       badge: "Mais Pedido",
-      icon: "zap",
     },
     {
-      id: "barba-terapia",
+      id: "barba-completa",
       name: "Barba Completa",
       category: "Barba",
       price: "R$ 55",
       priceRaw: 55,
       duration: "40 min",
-      description: "Barba alinhada, desenhada e aparada na navalha com toalha morna e loção pós-barba refrescante.",
+      description: "Alinhamento com toalha morna, contorno na navalha, hidratação e pós-barba refrescante.",
       featured: false,
-      badge: null,
-      icon: "sparkles",
     },
     {
       id: "combo-corte-barba",
@@ -120,10 +116,9 @@ export const barbershopConfig = {
       price: "R$ 110",
       priceRaw: 110,
       duration: "1h 20min",
-      description: "O pacote completo: cabelo cortado e barba alinhada no capricho para sair com o visual em dia.",
+      description: "Pacote completo: corte alinhado e barba desenhada no capricho para renovar o visual.",
       featured: true,
       badge: "Mais Escolhido",
-      icon: "crown",
     },
     {
       id: "acabamento-pezinho",
@@ -132,10 +127,8 @@ export const barbershopConfig = {
       price: "R$ 30",
       priceRaw: 30,
       duration: "20 min",
-      description: "Acerto do pezinho, costeletas e contorno do pescoço na navalha para manter o corte em dia.",
+      description: "Acerto do contorno, costeletas e nuca na navalha para manter o corte em dia entre visitas.",
       featured: false,
-      badge: null,
-      icon: "check-circle",
     },
     {
       id: "sobrancelha",
@@ -144,189 +137,138 @@ export const barbershopConfig = {
       price: "R$ 25",
       priceRaw: 25,
       duration: "15 min",
-      description: "Limpeza dos excessos e alinhamento simples na navalha ou pinça, bem natural.",
+      description: "Limpeza de excessos e alinhamento natural na navalha ou pinça.",
       featured: false,
-      badge: null,
-      icon: "eye",
     },
     {
       id: "camuflagem-grisalhos",
       name: "Camuflagem de Grisalhos",
-      category: "Estética",
+      category: "Tratamento",
       price: "R$ 70",
       priceRaw: 70,
       duration: "30 min",
-      description: "Tonalização simples e discreta para disfarçar fios brancos de forma bem natural.",
+      description: "Tonalização suave e discreta para disfarçar fios brancos com efeito natural.",
       featured: false,
-      badge: null,
-      icon: "feather",
     },
     {
       id: "lavagem-hidratacao",
       name: "Lavagem & Hidratação",
-      category: "Tratamentos",
+      category: "Tratamento",
       price: "R$ 60",
       priceRaw: 60,
       duration: "35 min",
-      description: "Lavagem caprichada e hidratação para limpar bem o couro cabeludo e alinhar os fios.",
+      description: "Limpeza profunda do couro cabeludo e hidratação para alinhar e nutrir os fios.",
       featured: false,
-      badge: null,
-      icon: "shield",
     }
   ],
 
-  // Galeria de Trabalhos Reais
+  // Categorias da Galeria
+  galleryCategories: [
+    { id: "todos", name: "Todos os Estilos" },
+    { id: "degrade", name: "Degradê (Fade)" },
+    { id: "barba", name: "Barba" },
+    { id: "classico", name: "Clássicos & Social" },
+  ],
+
+  // Espaços Reservados para Fotografias Reais de Cortes
   galleryItems: [
     {
       id: 1,
       category: "degrade",
       categoryName: "Degradê",
-      title: "Skin Fade com Texturizado",
-      description: "Degradê raspado na pele com topo texturizado e acabamento natural.",
-      imageUrl: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1000&q=85",
-      thumbnailUrl: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80",
+      title: "Skin Fade com Topo Texturizado",
+      description: "Disfarçado navalhado na pele com linhas nítidas e topo texturizado.",
     },
     {
       id: 2,
       category: "barba",
       categoryName: "Barba",
       title: "Barba Alinhada na Navalha",
-      description: "Barba cheia com contorno bem desenhado nas bochechas e no pescoço.",
-      imageUrl: "https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&w=1000&q=85",
-      thumbnailUrl: "https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&w=600&q=80",
+      description: "Contorno limpo nas bochechas e no pescoço com acabamento toalha morna.",
     },
     {
       id: 3,
       category: "classico",
-      categoryName: "Corte Clássico",
-      title: "Corte Clássico com Pomada",
-      description: "Corte tradicional penteado para trás com bom caimento e fixação média.",
-      imageUrl: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1000&q=85",
-      thumbnailUrl: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80",
+      categoryName: "Clássicos & Social",
+      title: "Corte Clássico Penteado",
+      description: "Caimento tradicional trabalhado na tesoura com finalização em pomada fosca.",
     },
     {
       id: 4,
-      category: "social",
-      categoryName: "Corte Social",
-      title: "Corte Social Tradicional",
-      description: "Corte social limpo com laterais baixas e topo alinhado.",
-      imageUrl: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85",
-      thumbnailUrl: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80",
+      category: "degrade",
+      categoryName: "Degradê",
+      title: "Mid Fade com Pezinho Reto",
+      description: "Degradê na altura média com acabamento frontal e costeletas milimétricas.",
     },
     {
       id: 5,
-      category: "degrade",
-      categoryName: "Degradê",
-      title: "Degradê Médio com Pezinho Feito",
-      description: "Disfarçado na altura média com contorno frontal bem definido.",
-      imageUrl: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=85",
-      thumbnailUrl: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80",
+      category: "barba",
+      categoryName: "Barba",
+      title: "Aparação e Desenho de Barba",
+      description: "Volume reduzido no ponto certo mantendo linhas retas e marcadas.",
     },
     {
       id: 6,
-      category: "transformacoes",
-      categoryName: "Transformações",
-      title: "Acerto Completo de Cabelo e Barba",
-      description: "Visual renovado com laterais curtas e barba desenhada no capricho.",
-      imageUrl: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1000&q=85",
-      thumbnailUrl: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=80",
+      category: "classico",
+      categoryName: "Clássicos & Social",
+      title: "Corte Social Alinhado",
+      description: "Laterais baixas sem raspar e topo alinhado para o dia a dia profissional.",
     },
     {
       id: 7,
-      category: "classico",
-      categoryName: "Corte Clássico",
-      title: "Corte Repartido de Lado",
-      description: "Divisão lateral bem marcada e acabamento caprichado na navalha.",
-      imageUrl: "https://images.unsplash.com/photo-1493256338651-d82f7acb2b38?auto=format&fit=crop&w=1000&q=85",
-      thumbnailUrl: "https://images.unsplash.com/photo-1493256338651-d82f7acb2b38?auto=format&fit=crop&w=600&q=80",
+      category: "degrade",
+      categoryName: "Degradê",
+      title: "Low Fade Disfarçado",
+      description: "Degradê sutil e baixo rente à orelha preservando densidade lateral.",
     },
     {
       id: 8,
       category: "barba",
       categoryName: "Barba",
-      title: "Barba Feita na Toalha Quente",
-      description: "Barbear clássico com toalha morna e acabamento alinhado no capricho.",
-      imageUrl: "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?auto=format&fit=crop&w=1000&q=85",
-      thumbnailUrl: "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?auto=format&fit=crop&w=600&q=80",
+      title: "Barba Desenhada e Queixo Definido",
+      description: "Linha do maxilar limpa e simétrica na navalha com toalha aquecida.",
     },
     {
       id: 9,
-      category: "social",
-      categoryName: "Corte Social",
-      title: "Corte Inteiro na Tesoura",
-      description: "Corte trabalhado na tesoura respeitando o caimento natural do cabelo.",
-      imageUrl: "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=1000&q=85",
-      thumbnailUrl: "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=600&q=80",
+      category: "classico",
+      categoryName: "Clássicos & Social",
+      title: "Corte 100% na Tesoura",
+      description: "Sem máquina: trabalho artesanal na tesoura respeitando o caimento natural.",
     },
-    {
-      id: 10,
-      category: "transformacoes",
-      categoryName: "Transformações",
-      title: "Topete Moderno com Fade",
-      description: "Corte com volume no topo e laterais bem curtas e disfarçadas.",
-      imageUrl: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=1000&q=85",
-      thumbnailUrl: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80",
-    },
-    {
-      id: 11,
-      category: "degrade",
-      categoryName: "Degradê",
-      title: "Degradê Baixo (Low Fade)",
-      description: "Disfarçado sutil rente à orelha mantendo volume nas laterais.",
-      imageUrl: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1000&q=85",
-      thumbnailUrl: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80",
-    },
-    {
-      id: 12,
-      category: "barba",
-      categoryName: "Barba",
-      title: "Aparação e Contorno de Barba",
-      description: "Barba aparada no tamanho certo com linhas retas na bochecha e maxilar.",
-      imageUrl: "https://images.unsplash.com/photo-1567894340315-735d7c361db0?auto=format&fit=crop&w=1000&q=85",
-      thumbnailUrl: "https://images.unsplash.com/photo-1567894340315-735d7c361db0?auto=format&fit=crop&w=600&q=80",
-    }
   ],
 
-  // Diferenciais Diretos e Reais
+  // Diferenciais
   differentials: [
     {
-      icon: "scissors",
+      number: "01",
       title: "Corte no Capricho",
-      description: "Degradê bem disfarçado sem marcas, corte na tesoura com caimento certo e pezinho reto."
+      description: "Degradê limpo sem marcas, corte na tesoura com caimento certo e pezinho perfeitamente alinhado na navalha."
     },
     {
-      icon: "award",
+      number: "02",
       title: "Sempre o Mesmo Barbeiro",
-      description: "Sem rotatividade. Você senta sempre com quem já sabe exatamente como você gosta do seu corte."
+      description: "Sem rotatividade de profissionais. Você senta sempre com quem já conhece seu estilo, formato de cabeça e preferência."
     },
     {
-      icon: "user-check",
+      number: "03",
       title: "Atendimento no seu Tempo",
-      description: "Sem pressa e sem correria. Cada horário é reservado para fazer o seu corte com calma e atenção."
+      description: "Sem pressa e sem fila. Cada horário é reservado com folga para fazer seu corte com foco, calma e precisão."
     }
   ],
 
-  // Chamada Final (CTA)
-  finalCta: {
-    title: "SEU PRÓXIMO CORTE COMEÇA AQUI.",
-    text: "Garanta seu horário e venha dar um trato no visual com tranquilidade.",
-    buttonText: "AGENDAR PELO WHATSAPP",
-    subtext: "Agendamento rápido e direto pelo WhatsApp",
-  },
-
-  // Rodapé e Links
+  // Rodapé
   footer: {
-    description: "Cortes masculinos bem feitos, degradê no capricho e barba alinhada na navalha. Atendimento direto e de confiança.",
+    description: "Cortes masculinos bem feitos, degradê no capricho e barba alinhada na navalha com o Leonardo. Atendimento pontual em Montes Claros.",
     links: [
       { label: "Início", href: "#inicio" },
-      { label: "Sobre mim", href: "#sobre" },
-      { label: "Meus Serviços", href: "#servicos" },
-      { label: "Galeria", href: "#galeria" },
-      { label: "Meu Diferencial", href: "#diferenciais" },
-      { label: "Contato & Localização", href: "#contato" },
+      { label: "Sobre", href: "#sobre" },
+      { label: "Serviços & Preços", href: "#servicos" },
+      { label: "Estilos", href: "#galeria" },
+      { label: "Diferencial", href: "#diferenciais" },
+      { label: "Localização", href: "#contato" },
     ],
     copyright: "© {year} Leo's Barbearia. Todos os direitos reservados.",
-    tagline: "Corte no capricho para quem gosta de andar alinhado."
+    tagline: "Montes Claros - MG • Atendimento com hora marcada."
   }
 };
 
@@ -338,7 +280,7 @@ export function getWhatsAppBookingUrl(serviceName = null) {
   let text = barbershopConfig.whatsappDefaultMessage;
   
   if (serviceName) {
-    text = `Olá! Gostaria de agendar um horário para fazer o serviço de *${serviceName}*. Poderia me informar os horários disponíveis?`;
+    text = `Olá, Leonardo! Gostaria de agendar um horário para fazer *${serviceName}*. Poderia me informar os horários disponíveis?`;
   }
   
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;

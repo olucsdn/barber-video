@@ -8,8 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderServices();
   renderGallery();
   renderDifferentials();
-  initFinalCta();
-  initFloatingWhatsApp();
+  initWhatsAppButtons();
   initFooter();
 });
 
@@ -24,13 +23,12 @@ function initNavbar() {
   const closeMenuBtn = document.getElementById('close-menu-btn');
   const navLinks = document.querySelectorAll('.nav-link-item');
 
-  // Sticky scroll effect
   const handleScroll = () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('bg-barber-black/95', 'backdrop-blur-md', 'py-4', 'border-b', 'border-white/10', 'shadow-2xl');
+    if (window.scrollY > 30) {
+      navbar.classList.add('bg-dark-950/95', 'backdrop-blur-md', 'py-4', 'border-b', 'border-zinc-850', 'shadow-xl');
       navbar.classList.remove('py-6', 'bg-transparent');
     } else {
-      navbar.classList.remove('bg-barber-black/95', 'backdrop-blur-md', 'py-4', 'border-b', 'border-white/10', 'shadow-2xl');
+      navbar.classList.remove('bg-dark-950/95', 'backdrop-blur-md', 'py-4', 'border-b', 'border-zinc-850', 'shadow-xl');
       navbar.classList.add('py-6', 'bg-transparent');
     }
   };
@@ -38,7 +36,6 @@ function initNavbar() {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
-  // Mobile Drawer Toggle
   const toggleMenu = (open) => {
     if (open) {
       mobileDrawer.classList.remove('translate-x-full');
@@ -51,17 +48,10 @@ function initNavbar() {
     }
   };
 
-  if (menuBtn) {
-    menuBtn.addEventListener('click', () => toggleMenu(true));
-  }
-  if (closeMenuBtn) {
-    closeMenuBtn.addEventListener('click', () => toggleMenu(false));
-  }
-  if (mobileDrawerBackdrop) {
-    mobileDrawerBackdrop.addEventListener('click', () => toggleMenu(false));
-  }
+  if (menuBtn) menuBtn.addEventListener('click', () => toggleMenu(true));
+  if (closeMenuBtn) closeMenuBtn.addEventListener('click', () => toggleMenu(false));
+  if (mobileDrawerBackdrop) mobileDrawerBackdrop.addEventListener('click', () => toggleMenu(false));
 
-  // Close drawer when clicking any link
   navLinks.forEach(link => {
     link.addEventListener('click', () => toggleMenu(false));
   });
@@ -74,7 +64,6 @@ function initHeroVideo() {
   const video = document.getElementById('hero-video');
   if (!video) return;
 
-  // Garante autoplay sem som
   video.muted = true;
   video.defaultMuted = true;
   video.playsInline = true;
@@ -83,100 +72,86 @@ function initHeroVideo() {
   if (playPromise !== undefined) {
     playPromise.catch(error => {
       console.warn("Autoplay prevenido pelo navegador:", error);
-      // Se o autoplay foi bloqueado, o poster fotográfico já garante a experiência visual
     });
   }
 }
 
 /**
- * 3. SOBRE A BARBEARIA - DESTAQUES
+ * 3. SOBRE - DESTAQUES EDITORIAIS (SEM CARDS EM BLOCO)
  */
 function renderAboutHighlights() {
   const container = document.getElementById('about-highlights-grid');
   if (!container) return;
 
   container.innerHTML = barbershopConfig.about.highlights.map((item, index) => {
-    const isRed = index % 2 === 0;
-    const iconColor = isRed ? 'bg-red-500/10 text-red-400 border-red-500/20' : 'bg-blue-500/10 text-blue-400 border-blue-500/20';
-    const hoverBorder = isRed ? 'hover:border-red-500/30' : 'hover:border-blue-500/30';
     return `
-      <div class="flex items-start gap-4 p-4 rounded-xl bg-barber-surface/60 border border-white/5 ${hoverBorder} transition-colors">
-        <div class="w-10 h-10 rounded-lg ${iconColor} border flex items-center justify-center shrink-0">
-          ${icons['check-circle']}
-        </div>
-        <div>
+      <div class="py-4 border-b border-zinc-850 sm:border-b-0 sm:py-0">
+        <div class="flex items-center gap-2.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
           <h4 class="font-display font-semibold text-white text-base tracking-wide">${item.title}</h4>
-          <p class="text-zinc-400 text-sm mt-1 leading-relaxed">${item.desc}</p>
         </div>
+        <p class="text-zinc-400 text-sm mt-1.5 leading-relaxed pl-4">${item.desc}</p>
       </div>
     `;
   }).join('');
 }
 
 /**
- * 4. SERVIÇOS & CARDS ELEGANTES
+ * 4. SERVIÇOS & PREÇOS (MENU EDITORIAL DE BARBEARIA)
  */
 function renderServices() {
   const container = document.getElementById('services-grid');
   if (!container) return;
 
-  container.innerHTML = barbershopConfig.services.map((service, index) => {
+  container.innerHTML = barbershopConfig.services.map((service) => {
     const bookingUrl = getWhatsAppBookingUrl(service.name);
-    const isRedCard = service.id === 'degra-fade' || (index % 2 === 0 && !service.featured);
-    const accentText = isRedCard ? 'text-red-400' : 'text-blue-400';
-    
-    // Featured badges & styling
-    let ringClass = '';
-    let badgeHtml = '';
-    // White button styling with dark text for high contrast & luxury feel
-    let btnClass = 'bg-white hover:bg-zinc-200 text-barber-black font-bold border border-white shadow-md shadow-white/10';
-
-    if (service.id === 'degra-fade') {
-      ringClass = 'ring-1 ring-red-500/50 shadow-lg shadow-red-500/10';
-      badgeHtml = `<div class="absolute -top-3 right-6 bg-gradient-to-r from-red-600 to-red-500 text-white font-bold text-xs tracking-wider uppercase px-3 py-1 rounded-full shadow-lg">Mais Pedido</div>`;
-      btnClass = 'bg-white hover:bg-zinc-200 text-barber-black font-extrabold border border-white shadow-lg shadow-white/20';
-    } else if (service.id === 'combo-corte-barba') {
-      ringClass = 'ring-1 ring-blue-500/50 shadow-lg shadow-blue-500/10';
-      badgeHtml = `<div class="absolute -top-3 right-6 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold text-xs tracking-wider uppercase px-3 py-1 rounded-full shadow-lg">Mais Escolhido</div>`;
-      btnClass = 'bg-white hover:bg-zinc-200 text-barber-black font-extrabold border border-white shadow-lg shadow-white/20';
-    }
+    const badgeHtml = service.featured && service.badge
+      ? `<span class="inline-block text-[10px] font-mono uppercase tracking-wider text-zinc-300 border border-zinc-700 px-2 py-0.5 rounded">${service.badge}</span>`
+      : '';
 
     return `
-      <div class="card-luxury rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative group ${ringClass}">
-        ${badgeHtml}
-
-        <div>
-          <h3 class="font-display text-xl font-bold text-white group-hover:text-zinc-100 transition-colors">
-            ${service.name}
-          </h3>
-
-          <p class="text-zinc-400 text-sm mt-2.5 leading-relaxed">
+      <div class="group py-6 border-b border-zinc-800/80 hover:border-zinc-600 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4">
+        
+        <!-- Info do Serviço -->
+        <div class="flex-1 pr-0 md:pr-8">
+          <div class="flex items-center flex-wrap gap-2.5">
+            <h3 class="font-display text-lg sm:text-xl font-bold text-white group-hover:text-zinc-100 transition-colors">
+              ${service.name}
+            </h3>
+            <span class="text-xs text-zinc-400 font-mono flex items-center gap-1">
+              ${icons.clock}
+              ${service.duration}
+            </span>
+            ${badgeHtml}
+          </div>
+          <p class="text-zinc-400 text-xs sm:text-sm mt-1.5 leading-relaxed max-w-2xl font-light">
             ${service.description}
           </p>
         </div>
 
-        <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-4">
-          <div>
-            <span class="block text-[11px] uppercase tracking-wider text-zinc-400">Valor</span>
-            <span class="font-display text-2xl font-bold ${accentText} tracking-tight">${service.price}</span>
+        <!-- Preço e Botão WhatsApp -->
+        <div class="flex items-center justify-between md:justify-end gap-6 shrink-0 pt-2 md:pt-0">
+          <div class="text-left md:text-right">
+            <span class="block text-[10px] uppercase font-mono tracking-wider text-zinc-400">Valor</span>
+            <span class="font-display text-2xl font-bold text-white tracking-tight">${service.price}</span>
           </div>
 
           <a href="${bookingUrl}" target="_blank" rel="noopener noreferrer"
-             class="btn-shine inline-flex items-center gap-2 px-4 py-2.5 rounded-xl ${btnClass} text-xs font-bold tracking-wider uppercase transition-all duration-300">
+             class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-850 hover:bg-whatsapp text-zinc-200 hover:text-white border border-zinc-750 hover:border-whatsapp text-xs font-semibold tracking-wider uppercase transition-all duration-200">
             <span>Agendar</span>
             ${icons['arrow-right']}
           </a>
         </div>
+
       </div>
     `;
   }).join('');
 }
 
 /**
- * 5. GALERIA DE CORTES COM CATEGORIAS E LIGHTBOX
+ * 5. GALERIA DE ESTILOS COM ESPAÇOS RESERVADOS PARA FOTOS REAIS
  */
 let currentCategory = 'todos';
-let currentLightboxIndex = 0;
 let filteredGallery = [];
 
 function renderGallery() {
@@ -184,20 +159,18 @@ function renderGallery() {
   const gridContainer = document.getElementById('gallery-grid');
   if (!gridContainer) return;
 
-  // Render Tabs if container exists
+  // Render Tabs
   if (tabsContainer) {
     tabsContainer.innerHTML = barbershopConfig.galleryCategories.map(cat => `
       <button data-category="${cat.id}"
-              class="gallery-filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${cat.id === currentCategory ? 'bg-red-600 text-white shadow-lg shadow-red-600/20' : 'bg-barber-card/80 text-zinc-400 hover:text-white border border-white/5 hover:border-blue-500/30'}">
+              class="gallery-filter-btn px-4 py-2 rounded-lg text-xs font-semibold tracking-wider uppercase transition-all duration-200 ${cat.id === currentCategory ? 'bg-white text-dark-950 font-bold' : 'bg-dark-850 text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-700'}">
         ${cat.name}
       </button>
     `).join('');
 
-    // Tab click event
     tabsContainer.querySelectorAll('.gallery-filter-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        const cat = e.currentTarget.getAttribute('data-category');
-        currentCategory = cat;
+        currentCategory = e.currentTarget.getAttribute('data-category');
         renderGallery();
       });
     });
@@ -208,175 +181,110 @@ function renderGallery() {
     ? barbershopConfig.galleryItems
     : barbershopConfig.galleryItems.filter(item => item.category === currentCategory);
 
-  // Render Grid
-  gridContainer.innerHTML = filteredGallery.map((item, index) => {
-    const isRed = index % 2 === 0;
-    const badgeColor = isRed ? 'text-red-400 border-red-500/30' : 'text-blue-400 border-blue-500/30';
-    const hoverBorder = isRed ? 'hover:border-red-500/40' : 'hover:border-blue-500/40';
+  // Render Grid com placeholders elegantes reservados para fotografias
+  gridContainer.innerHTML = filteredGallery.map((item) => {
+    const bookingUrl = getWhatsAppBookingUrl(item.title);
 
     return `
-      <div data-index="${index}" class="gallery-card group relative aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer bg-barber-card border border-white/5 ${hoverBorder} transition-all duration-500 shadow-xl">
-        <img src="${item.thumbnailUrl}" alt="${item.title}" loading="lazy"
-             class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 filter brightness-95 group-hover:brightness-105" />
+      <div class="group relative aspect-[4/5] rounded-xl overflow-hidden border border-zinc-800/80 hover:border-zinc-600 bg-dark-900 transition-all duration-300 flex flex-col justify-between p-6">
         
-        <div class="absolute inset-0 bg-gradient-to-t from-barber-black via-barber-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-        
-        <div class="absolute top-4 left-4">
-          <span class="text-[11px] font-semibold tracking-widest uppercase px-3 py-1 rounded-full bg-barber-black/80 ${badgeColor} border backdrop-blur-md">
+        <!-- Topo: Categoria & Indicador de Espaço -->
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] font-mono font-semibold tracking-widest uppercase text-zinc-300 border border-zinc-800 bg-dark-950/80 px-2.5 py-1 rounded">
             ${item.categoryName}
+          </span>
+          <span class="text-zinc-600 group-hover:text-zinc-400 transition-colors" title="Espaço para Foto Real">
+            ${icons.camera}
           </span>
         </div>
 
-        <div class="absolute bottom-0 inset-x-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-          <h4 class="font-display font-bold text-white text-lg tracking-wide group-hover:text-zinc-100 transition-colors">
+        <!-- Centro: Marca d'água Monograma & Moldura Discreta -->
+        <div class="my-auto flex flex-col items-center justify-center text-center py-6">
+          <div class="w-16 h-16 rounded-xl border border-dashed border-zinc-800 flex items-center justify-center text-zinc-700 group-hover:border-zinc-700 group-hover:text-zinc-500 transition-all">
+            <span class="font-display font-bold text-2xl">L</span>
+          </div>
+          <span class="text-[11px] font-mono tracking-wider text-zinc-400 uppercase mt-3">
+            Espaço para Foto
+          </span>
+        </div>
+
+        <!-- Rodapé: Nome do Estilo & Botão WhatsApp -->
+        <div class="pt-4 border-t border-zinc-850">
+          <h4 class="font-display font-bold text-white text-base tracking-wide leading-snug">
             ${item.title}
           </h4>
-          <p class="text-zinc-300 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
+          <p class="text-zinc-400 text-xs mt-1 leading-relaxed line-clamp-2">
             ${item.description}
           </p>
+
+          <a href="${bookingUrl}" target="_blank" rel="noopener noreferrer"
+             class="mt-3.5 inline-flex items-center gap-2 text-xs font-semibold text-zinc-300 hover:text-whatsapp transition-colors">
+            <span>Pedir esse corte no WhatsApp</span>
+            ${icons['arrow-right']}
+          </a>
         </div>
+
       </div>
     `;
   }).join('');
-
-  // Attach Lightbox Trigger
-  gridContainer.querySelectorAll('.gallery-card').forEach(card => {
-    card.addEventListener('click', (e) => {
-      const idx = parseInt(card.getAttribute('data-index'), 10);
-      openLightbox(idx);
-    });
-  });
-
-  initLightbox();
 }
 
 /**
- * LIGHTBOX MODAL
- */
-function initLightbox() {
-  const modal = document.getElementById('lightbox-modal');
-  const closeBtn = document.getElementById('lightbox-close');
-  const prevBtn = document.getElementById('lightbox-prev');
-  const nextBtn = document.getElementById('lightbox-next');
-  if (!modal) return;
-
-  const closeModal = () => {
-    modal.classList.add('hidden');
-    document.body.style.overflow = '';
-  };
-
-  closeBtn?.addEventListener('click', closeModal);
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal || e.target.classList.contains('lightbox-backdrop')) {
-      closeModal();
-    }
-  });
-
-  prevBtn?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentLightboxIndex = (currentLightboxIndex - 1 + filteredGallery.length) % filteredGallery.length;
-    updateLightboxContent();
-  });
-
-  nextBtn?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentLightboxIndex = (currentLightboxIndex + 1) % filteredGallery.length;
-    updateLightboxContent();
-  });
-
-  // Keyboard navigation
-  window.addEventListener('keydown', (e) => {
-    if (modal.classList.contains('hidden')) return;
-    if (e.key === 'Escape') closeModal();
-    if (e.key === 'ArrowLeft') prevBtn?.click();
-    if (e.key === 'ArrowRight') nextBtn?.click();
-  });
-}
-
-function openLightbox(index) {
-  const modal = document.getElementById('lightbox-modal');
-  if (!modal || !filteredGallery[index]) return;
-
-  currentLightboxIndex = index;
-  updateLightboxContent();
-  modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-}
-
-function updateLightboxContent() {
-  const item = filteredGallery[currentLightboxIndex];
-  if (!item) return;
-
-  const img = document.getElementById('lightbox-img');
-  const title = document.getElementById('lightbox-title');
-  const desc = document.getElementById('lightbox-desc');
-  const cat = document.getElementById('lightbox-category');
-  const counter = document.getElementById('lightbox-counter');
-  const cta = document.getElementById('lightbox-cta');
-
-  if (img) img.src = item.imageUrl;
-  if (title) title.textContent = item.title;
-  if (desc) desc.textContent = item.description;
-  if (cat) cat.textContent = item.categoryName;
-  if (counter) counter.textContent = `${currentLightboxIndex + 1} / ${filteredGallery.length}`;
-  if (cta) {
-    const text = encodeURIComponent(`Olá! Vi o corte "${item.title}" na sua galeria e gostaria de fazer esse estilo.`);
-    cta.href = `https://wa.me/5538988399608?text=${text}`;
-  }
-}
-
-/**
- * 6. DIFERENCIAIS
+ * 6. DIFERENCIAIS EDITORIAIS (SEM CAIXAS QUADRADAS DE SAAS)
  */
 function renderDifferentials() {
   const container = document.getElementById('differentials-grid');
   if (!container) return;
 
   container.innerHTML = barbershopConfig.differentials.map((diff, index) => {
-    const isRed = index % 2 === 0;
-    const numColor = isRed ? 'text-red-500/60' : 'text-blue-500/60';
-    const borderHover = isRed ? 'hover:border-red-500/40' : 'hover:border-blue-500/40';
-    const titleHover = isRed ? 'group-hover:text-red-300' : 'group-hover:text-blue-300';
-
     return `
-      <div class="p-8 rounded-2xl bg-barber-card/60 border border-white/5 ${borderHover} transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group shadow-xl">
-        <div>
-          <span class="text-xs font-mono ${numColor} font-semibold tracking-wider">0${index + 1}</span>
-          <h3 class="font-display text-xl font-bold text-white mt-3 ${titleHover} transition-colors">
-            ${diff.title}
-          </h3>
-          <p class="text-zinc-400 text-sm mt-3 leading-relaxed">
-            ${diff.description}
-          </p>
-        </div>
+      <div class="py-8 md:py-0 border-b border-zinc-850 md:border-b-0 md:border-r last:border-r-0 md:px-8 first:pl-0 last:pr-0">
+        <span class="text-3xl font-display font-light text-zinc-400 block">${diff.number}</span>
+        <h3 class="font-display text-xl font-bold text-white mt-3 tracking-wide">
+          ${diff.title}
+        </h3>
+        <p class="text-zinc-400 text-sm mt-3 leading-relaxed font-light">
+          ${diff.description}
+        </p>
       </div>
     `;
   }).join('');
 }
 
 /**
- * 7. CHAMADA FINAL (CTA)
+ * 7. BOTÕES DO WHATSAPP COM IDENTIDADE OFICIAL
  */
-function initFinalCta() {
-  const ctaBtn = document.getElementById('final-cta-btn');
-  if (ctaBtn) {
-    ctaBtn.href = getWhatsAppBookingUrl();
+function initWhatsAppButtons() {
+  const bookingUrl = getWhatsAppBookingUrl();
+
+  const heroCta = document.getElementById('hero-whatsapp-btn');
+  if (heroCta) {
+    heroCta.href = bookingUrl;
+  }
+
+  const finalCta = document.getElementById('final-cta-btn');
+  if (finalCta) {
+    finalCta.href = bookingUrl;
+  }
+
+  const floatingBtn = document.getElementById('floating-whatsapp');
+  if (floatingBtn) {
+    floatingBtn.href = bookingUrl;
+  }
+
+  const contactBtn = document.getElementById('contact-whatsapp-btn');
+  if (contactBtn) {
+    contactBtn.href = bookingUrl;
+  }
+
+  const headerBtn = document.getElementById('header-whatsapp-btn');
+  if (headerBtn) {
+    headerBtn.href = bookingUrl;
   }
 }
 
 /**
- * 8. BOTÃO FLUTUANTE DO WHATSAPP
- */
-function initFloatingWhatsApp() {
-  const btn = document.getElementById('floating-whatsapp');
-  if (btn) {
-    btn.href = getWhatsAppBookingUrl();
-  }
-}
-
-/**
- * 9. RODAPÉ & ANO
+ * 8. RODAPÉ & ANO
  */
 function initFooter() {
   const yearEl = document.getElementById('current-year');
