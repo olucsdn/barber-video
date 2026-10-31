@@ -16,7 +16,7 @@ export const barbershopConfig = {
   phoneFormatted: "+5538988399608",
   whatsappNumber: "5538988399608",
   whatsappDefaultMessage: "Olá, Leonardo! Gostaria de agendar um horário para corte de cabelo.",
-  instagramUrl: "https://www.instagram.com/leo_cort3z?exln=MWdqaHB1ZnNnOHprcA==",
+  instagramUrl: "https://www.instagram.com/leo_cort3z/",
   instagramHandle: "@leo_cort3z",
   
   // Localização Real
@@ -76,57 +76,38 @@ export const barbershopConfig = {
     }
   },
 
-  // Serviços e Preços
+  // Especialidades e Serviços
   services: [
     {
-      id: "corte-masculino",
-      name: "Corte Masculino",
+      id: "corte-cabelo",
+      name: "Corte de Cabelo",
       category: "Cabelo",
-      price: "R$ 65",
-      priceRaw: 65,
-      duration: "45 min",
+      duration: "~45 min",
       description: "Corte completo na tesoura ou máquina, acabamento fino do pezinho e finalização com pomada.",
       featured: false,
     },
     {
-      id: "degra-fade",
+      id: "degrade-fade",
       name: "Degradê (Fade)",
       category: "Cabelo",
-      price: "R$ 75",
-      priceRaw: 75,
-      duration: "50 min",
+      duration: "~50 min",
       description: "Disfarçado limpo na navalha ou shaver (Skin Fade, Mid Fade ou Low Fade). Linhas retas e nítidas.",
       featured: true,
       badge: "Mais Pedido",
     },
     {
-      id: "barba-completa",
-      name: "Barba Completa",
+      id: "barba",
+      name: "Barba",
       category: "Barba",
-      price: "R$ 55",
-      priceRaw: 55,
-      duration: "40 min",
+      duration: "~40 min",
       description: "Alinhamento com toalha morna, contorno na navalha, hidratação e pós-barba refrescante.",
       featured: false,
-    },
-    {
-      id: "combo-corte-barba",
-      name: "Corte + Barba",
-      category: "Combos",
-      price: "R$ 110",
-      priceRaw: 110,
-      duration: "1h 20min",
-      description: "Pacote completo: corte alinhado e barba desenhada no capricho para renovar o visual.",
-      featured: true,
-      badge: "Mais Escolhido",
     },
     {
       id: "acabamento-pezinho",
       name: "Acabamento & Pezinho",
       category: "Cabelo",
-      price: "R$ 30",
-      priceRaw: 30,
-      duration: "20 min",
+      duration: "~20 min",
       description: "Acerto do contorno, costeletas e nuca na navalha para manter o corte em dia entre visitas.",
       featured: false,
     },
@@ -134,30 +115,8 @@ export const barbershopConfig = {
       id: "sobrancelha",
       name: "Sobrancelha",
       category: "Estética",
-      price: "R$ 25",
-      priceRaw: 25,
-      duration: "15 min",
+      duration: "~15 min",
       description: "Limpeza de excessos e alinhamento natural na navalha ou pinça.",
-      featured: false,
-    },
-    {
-      id: "camuflagem-grisalhos",
-      name: "Camuflagem de Grisalhos",
-      category: "Tratamento",
-      price: "R$ 70",
-      priceRaw: 70,
-      duration: "30 min",
-      description: "Tonalização suave e discreta para disfarçar fios brancos com efeito natural.",
-      featured: false,
-    },
-    {
-      id: "lavagem-hidratacao",
-      name: "Lavagem & Hidratação",
-      category: "Tratamento",
-      price: "R$ 60",
-      priceRaw: 60,
-      duration: "35 min",
-      description: "Limpeza profunda do couro cabeludo e hidratação para alinhar e nutrir os fios.",
       featured: false,
     }
   ],
@@ -254,7 +213,7 @@ export const barbershopConfig = {
     links: [
       { label: "Início", href: "#inicio" },
       { label: "Sobre", href: "#sobre" },
-      { label: "Serviços & Preços", href: "#servicos" },
+      { label: "Meus Serviços", href: "#servicos" },
       { label: "Estilos", href: "#galeria" },
       { label: "Diferencial", href: "#diferenciais" },
       { label: "Localização", href: "#contato" },
@@ -272,7 +231,7 @@ export function getWhatsAppBookingUrl(serviceName = null) {
   let text = barbershopConfig.whatsappDefaultMessage;
   
   if (serviceName) {
-    text = `Olá, Leonardo! Gostaria de agendar um horário para fazer *${serviceName}*. Poderia me informar os horários disponíveis?`;
+    text = `Olá, Leonardo! Gostaria de saber o valor e os horários disponíveis para: ${serviceName}.`;
   }
   
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;

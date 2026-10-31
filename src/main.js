@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderDifferentials();
   initWhatsAppButtons();
   initFooter();
+  updateBusinessHoursStatus();
 });
 
 /**
@@ -118,10 +119,6 @@ function renderServices() {
             <h3 class="font-display text-lg sm:text-xl font-bold text-white group-hover:text-zinc-100 transition-colors">
               ${service.name}
             </h3>
-            <span class="text-xs text-white font-mono flex items-center gap-1">
-              ${icons.clock}
-              ${service.duration}
-            </span>
             ${badgeHtml}
           </div>
           <p class="text-white text-xs sm:text-sm mt-1.5 leading-relaxed max-w-2xl font-light">
@@ -129,17 +126,15 @@ function renderServices() {
           </p>
         </div>
 
-        <!-- Preço e Botão WhatsApp -->
-        <div class="flex items-center justify-between md:justify-end gap-6 shrink-0 pt-2 md:pt-0">
-          <div class="text-left md:text-right">
-            <span class="block text-[10px] uppercase font-mono tracking-wider text-white">Valor</span>
-            <span class="font-display text-2xl font-bold text-white tracking-tight">${service.price}</span>
-          </div>
+        <!-- Tempo Estimado e Botão WhatsApp -->
+        <div class="flex items-center justify-between md:justify-end gap-4 shrink-0 pt-2 md:pt-0">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-dark-850 border border-zinc-800 text-xs font-mono text-white">
+            ⏱️ ${service.duration}
+          </span>
 
           <a href="${bookingUrl}" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-850 hover:bg-whatsapp text-zinc-200 hover:text-white border border-zinc-750 hover:border-whatsapp text-xs font-semibold tracking-wider uppercase transition-all duration-200">
-            <span>Agendar</span>
-            ${icons['arrow-right']}
+             class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-850 hover:bg-whatsapp text-white hover:text-white border border-zinc-750 hover:border-whatsapp text-xs font-semibold tracking-wider uppercase transition-all duration-200">
+            <span>Consultar horários →</span>
           </a>
         </div>
 
@@ -263,5 +258,28 @@ function initFooter() {
   const yearEl = document.getElementById('current-year');
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
+  }
+}
+
+/**
+ * 9. STATUS DO HORÁRIO DE FUNCIONAMENTO (TEMPO REAL)
+ */
+function updateBusinessHoursStatus() {
+  const badge = document.getElementById('business-status-badge');
+  if (!badge) return;
+
+  const now = new Date();
+  const day = now.getDay(); // 0 = Domingo, 1 = Segunda, ..., 6 = Sábado
+  const hour = now.getHours();
+
+  // Seg a Sáb: 09h às 21h (entre 09:00 e 20:59)
+  const isOpen = (day >= 1 && day <= 6) && (hour >= 9 && hour < 21);
+
+  if (isOpen) {
+    badge.className = 'inline-flex items-center gap-1.5 text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-500/30 bg-emerald-950/40 text-emerald-400';
+    badge.textContent = '🟢 Aberto agora';
+  } else {
+    badge.className = 'inline-flex items-center gap-1.5 text-[10px] font-mono px-2 py-0.5 rounded border border-rose-500/30 bg-rose-950/40 text-rose-400';
+    badge.textContent = '🔴 Fechado no momento -- Agende seu horário';
   }
 }
