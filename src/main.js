@@ -128,18 +128,17 @@ function renderServices() {
     // Featured badges & styling
     let ringClass = '';
     let badgeHtml = '';
-    let btnClass = isRedCard
-      ? 'bg-red-600/15 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/30 hover:border-red-600'
-      : 'bg-blue-600/15 hover:bg-blue-600 text-blue-300 hover:text-white border border-blue-500/30 hover:border-blue-500';
+    // White button styling with dark text for high contrast & luxury feel
+    let btnClass = 'bg-white hover:bg-zinc-200 text-barber-black font-bold border border-white shadow-md shadow-white/10';
 
     if (service.id === 'degra-fade') {
       ringClass = 'ring-1 ring-red-500/50 shadow-lg shadow-red-500/10';
       badgeHtml = `<div class="absolute -top-3 right-6 bg-gradient-to-r from-red-600 to-red-500 text-white font-bold text-xs tracking-wider uppercase px-3 py-1 rounded-full shadow-lg">Mais Pedido</div>`;
-      btnClass = 'bg-red-600 hover:bg-red-500 text-white font-bold border border-red-500 shadow-md shadow-red-600/30';
+      btnClass = 'bg-white hover:bg-zinc-200 text-barber-black font-extrabold border border-white shadow-lg shadow-white/20';
     } else if (service.id === 'combo-corte-barba') {
       ringClass = 'ring-1 ring-blue-500/50 shadow-lg shadow-blue-500/10';
       badgeHtml = `<div class="absolute -top-3 right-6 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold text-xs tracking-wider uppercase px-3 py-1 rounded-full shadow-lg">Mais Escolhido</div>`;
-      btnClass = 'bg-blue-600 hover:bg-blue-500 text-white font-bold border border-blue-500 shadow-md shadow-blue-600/30';
+      btnClass = 'bg-white hover:bg-zinc-200 text-barber-black font-extrabold border border-white shadow-lg shadow-white/20';
     }
 
     return `
