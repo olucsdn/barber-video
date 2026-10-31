@@ -49,8 +49,8 @@
 
 /* Hero Video Overlay & Vignette */
 .hero-overlay {
-  background: radial-gradient(circle at center, rgba(8, 8, 10, 0.45) 0%, rgba(8, 8, 10, 0.8) 75%, #08080a 100%),
-              linear-gradient(180deg, rgba(8, 8, 10, 0.8) 0%, rgba(8, 8, 10, 0.25) 35%, rgba(8, 8, 10, 0.7) 70%, #08080a 100%);
+  background: radial-gradient(circle at center, rgba(8, 8, 10, 0.35) 0%, rgba(8, 8, 10, 0.72) 75%, #08080a 100%),
+              linear-gradient(180deg, rgba(8, 8, 10, 0.7) 0%, rgba(8, 8, 10, 0.18) 35%, rgba(8, 8, 10, 0.65) 70%, #08080a 100%);
 }
 
 /* Smooth fade-in modal */
