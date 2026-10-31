@@ -90,7 +90,7 @@ function renderAboutHighlights() {
           <span class="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
           <h4 class="font-display font-semibold text-white text-base tracking-wide">${item.title}</h4>
         </div>
-        <p class="text-zinc-400 text-sm mt-1.5 leading-relaxed pl-4">${item.desc}</p>
+        <p class="text-red-400 text-sm mt-1.5 leading-relaxed pl-4">${item.desc}</p>
       </div>
     `;
   }).join('');
@@ -106,7 +106,7 @@ function renderServices() {
   container.innerHTML = barbershopConfig.services.map((service) => {
     const bookingUrl = getWhatsAppBookingUrl(service.name);
     const badgeHtml = service.featured && service.badge
-      ? `<span class="inline-block text-[10px] font-mono uppercase tracking-wider text-zinc-300 border border-zinc-700 px-2 py-0.5 rounded">${service.badge}</span>`
+      ? `<span class="inline-block text-[10px] font-mono uppercase tracking-wider text-red-300 border border-zinc-700 px-2 py-0.5 rounded">${service.badge}</span>`
       : '';
 
     return `
@@ -118,13 +118,13 @@ function renderServices() {
             <h3 class="font-display text-lg sm:text-xl font-bold text-white group-hover:text-zinc-100 transition-colors">
               ${service.name}
             </h3>
-            <span class="text-xs text-zinc-400 font-mono flex items-center gap-1">
+            <span class="text-xs text-red-400 font-mono flex items-center gap-1">
               ${icons.clock}
               ${service.duration}
             </span>
             ${badgeHtml}
           </div>
-          <p class="text-zinc-400 text-xs sm:text-sm mt-1.5 leading-relaxed max-w-2xl font-light">
+          <p class="text-red-400 text-xs sm:text-sm mt-1.5 leading-relaxed max-w-2xl font-light">
             ${service.description}
           </p>
         </div>
@@ -132,7 +132,7 @@ function renderServices() {
         <!-- Preço e Botão WhatsApp -->
         <div class="flex items-center justify-between md:justify-end gap-6 shrink-0 pt-2 md:pt-0">
           <div class="text-left md:text-right">
-            <span class="block text-[10px] uppercase font-mono tracking-wider text-zinc-400">Valor</span>
+            <span class="block text-[10px] uppercase font-mono tracking-wider text-red-400">Valor</span>
             <span class="font-display text-2xl font-bold text-white tracking-tight">${service.price}</span>
           </div>
 
@@ -151,38 +151,11 @@ function renderServices() {
 /**
  * 5. GALERIA DE ESTILOS COM ESPAÇOS RESERVADOS PARA FOTOS REAIS
  */
-let currentCategory = 'todos';
-let filteredGallery = [];
-
 function renderGallery() {
-  const tabsContainer = document.getElementById('gallery-tabs');
   const gridContainer = document.getElementById('gallery-grid');
   if (!gridContainer) return;
 
-  // Render Tabs
-  if (tabsContainer) {
-    tabsContainer.innerHTML = barbershopConfig.galleryCategories.map(cat => `
-      <button data-category="${cat.id}"
-              class="gallery-filter-btn px-4 py-2 rounded-lg text-xs font-semibold tracking-wider uppercase transition-all duration-200 ${cat.id === currentCategory ? 'bg-white text-dark-950 font-bold' : 'bg-dark-850 text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-700'}">
-        ${cat.name}
-      </button>
-    `).join('');
-
-    tabsContainer.querySelectorAll('.gallery-filter-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        currentCategory = e.currentTarget.getAttribute('data-category');
-        renderGallery();
-      });
-    });
-  }
-
-  // Filter items
-  filteredGallery = currentCategory === 'todos'
-    ? barbershopConfig.galleryItems
-    : barbershopConfig.galleryItems.filter(item => item.category === currentCategory);
-
-  // Render Grid com placeholders elegantes reservados para fotografias
-  gridContainer.innerHTML = filteredGallery.map((item) => {
+  gridContainer.innerHTML = barbershopConfig.galleryItems.map((item) => {
     const bookingUrl = getWhatsAppBookingUrl(item.title);
 
     return `
@@ -190,10 +163,10 @@ function renderGallery() {
         
         <!-- Topo: Categoria & Indicador de Espaço -->
         <div class="flex items-center justify-between">
-          <span class="text-[10px] font-mono font-semibold tracking-widest uppercase text-zinc-300 border border-zinc-800 bg-dark-950/80 px-2.5 py-1 rounded">
+          <span class="text-[10px] font-mono font-semibold tracking-widest uppercase text-red-300 border border-zinc-800 bg-dark-950/80 px-2.5 py-1 rounded">
             ${item.categoryName}
           </span>
-          <span class="text-zinc-600 group-hover:text-zinc-400 transition-colors" title="Espaço para Foto Real">
+          <span class="text-zinc-600 group-hover:text-red-400 transition-colors" title="Espaço para Foto Real">
             ${icons.camera}
           </span>
         </div>
@@ -203,7 +176,7 @@ function renderGallery() {
           <div class="w-16 h-16 rounded-xl border border-dashed border-zinc-800 flex items-center justify-center text-zinc-700 group-hover:border-zinc-700 group-hover:text-zinc-500 transition-all">
             <span class="font-display font-bold text-2xl">L</span>
           </div>
-          <span class="text-[11px] font-mono tracking-wider text-zinc-400 uppercase mt-3">
+          <span class="text-[11px] font-mono tracking-wider text-red-400 uppercase mt-3">
             Espaço para Foto
           </span>
         </div>
@@ -213,12 +186,12 @@ function renderGallery() {
           <h4 class="font-display font-bold text-white text-base tracking-wide leading-snug">
             ${item.title}
           </h4>
-          <p class="text-zinc-400 text-xs mt-1 leading-relaxed line-clamp-2">
+          <p class="text-red-400 text-xs mt-1 leading-relaxed line-clamp-2">
             ${item.description}
           </p>
 
           <a href="${bookingUrl}" target="_blank" rel="noopener noreferrer"
-             class="mt-3.5 inline-flex items-center gap-2 text-xs font-semibold text-zinc-300 hover:text-whatsapp transition-colors">
+             class="mt-3.5 inline-flex items-center gap-2 text-xs font-semibold text-red-300 hover:text-whatsapp transition-colors">
             <span>Pedir esse corte no WhatsApp</span>
             ${icons['arrow-right']}
           </a>
@@ -239,11 +212,11 @@ function renderDifferentials() {
   container.innerHTML = barbershopConfig.differentials.map((diff, index) => {
     return `
       <div class="py-8 md:py-0 border-b border-zinc-850 md:border-b-0 md:border-r last:border-r-0 md:px-8 first:pl-0 last:pr-0">
-        <span class="text-3xl font-display font-light text-zinc-400 block">${diff.number}</span>
+        <span class="text-3xl font-display font-light text-red-400 block">${diff.number}</span>
         <h3 class="font-display text-xl font-bold text-white mt-3 tracking-wide">
           ${diff.title}
         </h3>
-        <p class="text-zinc-400 text-sm mt-3 leading-relaxed font-light">
+        <p class="text-red-400 text-sm mt-3 leading-relaxed font-light">
           ${diff.description}
         </p>
       </div>

@@ -162,14 +162,6 @@ export const barbershopConfig = {
     }
   ],
 
-  // Categorias da Galeria
-  galleryCategories: [
-    { id: "todos", name: "Todos os Estilos" },
-    { id: "degrade", name: "Degradê (Fade)" },
-    { id: "barba", name: "Barba" },
-    { id: "classico", name: "Clássicos & Social" },
-  ],
-
   // Espaços Reservados para Fotografias Reais de Cortes
   galleryItems: [
     {
