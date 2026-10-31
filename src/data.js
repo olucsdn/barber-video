@@ -12,9 +12,9 @@ export const barbershopConfig = {
   subtitle: "STUDIO PRIVADO • MASTER BARBER",
   barberName: "Lucas Silva",
   tagline: "Tradição no corte. Personalidade no estilo.",
-  phone: "(11) 98765-4321",
-  phoneFormatted: "+5511987654321",
-  whatsappNumber: "5511987654321", // Apenas números com DDI + DDD
+  phone: "(38) 98839-9608",
+  phoneFormatted: "+5538988399608",
+  whatsappNumber: "5538988399608", // Apenas números com DDI + DDD
   whatsappDefaultMessage: "Olá! Gostaria de agendar um horário exclusivo no estúdio privativo.",
   instagramUrl: "https://instagram.com/barbearia.assinatura",
   instagramHandle: "@barbearia.assinatura",

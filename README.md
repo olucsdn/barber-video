@@ -65,8 +65,8 @@ export const barbershopConfig = {
   name: "ASSINATURA",
   subtitle: "STUDIO PRIVADO • MASTER BARBER",
   barberName: "Lucas Silva",
-  phone: "(11) 98765-4321",
-  whatsappNumber: "5511987654321", // Apenas números: DDI (55) + DDD + Telefone
+  phone: "(38) 98839-9608",
+  whatsappNumber: "5538988399608", // Apenas números: DDI (55) + DDD + Telefone
   instagramUrl: "https://instagram.com/barbearia.assinatura",
   address: {
     street: "Rua Oscar Freire",
