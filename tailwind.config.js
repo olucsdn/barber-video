@@ -7,6 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        zinc: {
+          850: '#1f1f26',
+          750: '#2c2c36',
+        },
         dark: {
           950: '#08080a',
           900: '#0e0e11',

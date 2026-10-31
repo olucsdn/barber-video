@@ -85,12 +85,12 @@ function renderAboutHighlights() {
 
   container.innerHTML = barbershopConfig.about.highlights.map((item, index) => {
     return `
-      <div class="py-4 border-b border-zinc-850 sm:border-b-0 sm:py-0">
+      <div class="py-3.5 border-b border-zinc-800/60 sm:border-b-0 sm:py-0 first:pt-0 last:border-b-0 last:pb-0">
         <div class="flex items-center gap-2.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
           <h4 class="font-display font-semibold text-white text-base tracking-wide">${item.title}</h4>
         </div>
-        <p class="text-white text-sm mt-1.5 leading-relaxed pl-4">${item.desc}</p>
+        <p class="text-white text-sm mt-1 leading-relaxed pl-4">${item.desc}</p>
       </div>
     `;
   }).join('');
