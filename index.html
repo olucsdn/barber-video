@@ -16,8 +16,8 @@
   <meta property="og:description" content="Corte masculino bem feito, degradê disfarçado no capricho e barba alinhada na navalha com o Leonardo. Agende seu horário." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=80" />
   
-  <!-- Favicon Monograma Barber Pole em SVG Data URI -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23080809'/%3E%3Cpath d='M36 20 L48 20 L48 68 L72 68 L72 80 L36 80 Z' fill='%23DC2626'/%3E%3Ccircle cx='68' cy='28' r='6' fill='%232563EB'/%3E%3C/svg%3E" />
+  <!-- Favicon Monograma Fundo Branco com Letra Vazada em SVG Data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cmask id='m'%3E%3Crect width='100' height='100' rx='22' fill='white'/%3E%3Ctext x='50' y='72' font-family='serif' font-weight='900' font-size='65' text-anchor='middle' fill='black'%3EL%3C/text%3E%3C/mask%3E%3Crect width='100' height='100' rx='22' fill='white' mask='url(%23m)'/%3E%3C/svg%3E" />
 
   <!-- Tipografia Google Fonts: Cinzel (Display) & Plus Jakarta Sans (Texto) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -68,10 +68,16 @@
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 px-4 sm:px-8 mt-1">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <!-- Logotipo com Monograma Barber Pole -->
+      <!-- Logotipo com Monograma Fundo Branco e Letra Vazada -->
       <a href="#inicio" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 via-white/80 to-blue-600 flex items-center justify-center shadow-lg shadow-red-600/20 group-hover:scale-105 transition-transform duration-300 border border-white/20">
-          <span class="font-display font-black text-barber-black text-xl tracking-tighter">L</span>
+        <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-white/10 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center shrink-0">
+          <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="monogram-nav-mask">
+              <rect width="40" height="40" rx="10" fill="white" />
+              <text x="20" y="28" font-family="'Cinzel', serif" font-weight="900" font-size="24" text-anchor="middle" fill="black">L</text>
+            </mask>
+            <rect width="40" height="40" rx="10" fill="white" mask="url(#monogram-nav-mask)" />
+          </svg>
         </div>
         <div class="flex flex-col">
           <span class="font-display font-extrabold tracking-[0.18em] text-white text-base sm:text-lg leading-tight group-hover:text-red-400 transition-colors">
@@ -117,7 +123,15 @@
     <div>
       <div class="flex items-center justify-between pb-6 border-b border-white/10">
         <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-red-600 to-blue-600 flex items-center justify-center text-white font-display font-black text-base">L</div>
+          <div class="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center shrink-0">
+            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="monogram-drawer-mask">
+                <rect width="32" height="32" rx="8" fill="white" />
+                <text x="16" y="23" font-family="'Cinzel', serif" font-weight="900" font-size="20" text-anchor="middle" fill="black">L</text>
+              </mask>
+              <rect width="32" height="32" rx="8" fill="white" mask="url(#monogram-drawer-mask)" />
+            </svg>
+          </div>
           <span class="font-display font-bold text-white tracking-widest text-sm">LEO'S BARBEARIA</span>
         </div>
         <button id="close-menu-btn" aria-label="Fechar menu" class="text-zinc-400 hover:text-white p-1">
@@ -630,8 +644,14 @@
         <!-- Coluna 1: Marca & Apresentação -->
         <div class="lg:col-span-4">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 via-white/80 to-blue-600 flex items-center justify-center font-display font-black text-barber-black text-xl border border-white/20">
-              L
+            <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-white/10 flex items-center justify-center shrink-0">
+              <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="monogram-footer-mask">
+                  <rect width="40" height="40" rx="10" fill="white" />
+                  <text x="20" y="28" font-family="'Cinzel', serif" font-weight="900" font-size="24" text-anchor="middle" fill="black">L</text>
+                </mask>
+                <rect width="40" height="40" rx="10" fill="white" mask="url(#monogram-footer-mask)" />
+              </svg>
             </div>
             <div>
               <span class="font-display font-extrabold tracking-[0.18em] text-white text-lg">LEO'S</span>
