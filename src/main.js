@@ -121,12 +121,9 @@ function renderServices() {
   if (!container) return;
 
   container.innerHTML = barbershopConfig.services.map((service, index) => {
-    const iconHtml = icons[service.icon] || icons.scissors;
     const bookingUrl = getWhatsAppBookingUrl(service.name);
     const isRedCard = service.id === 'degra-fade' || (index % 2 === 0 && !service.featured);
     const accentText = isRedCard ? 'text-red-400' : 'text-blue-400';
-    const accentBorder = isRedCard ? 'border-red-500/20 group-hover:border-red-500/40' : 'border-blue-500/20 group-hover:border-blue-500/40';
-    const accentBg = isRedCard ? 'bg-red-500/10 text-red-400' : 'bg-blue-500/10 text-blue-400';
     
     // Featured badges & styling
     let ringClass = '';
@@ -150,16 +147,6 @@ function renderServices() {
         ${badgeHtml}
 
         <div>
-          <div class="flex items-center justify-between gap-4 mb-4">
-            <div class="w-12 h-12 rounded-xl ${accentBg} flex items-center justify-center border ${accentBorder} group-hover:scale-110 transition-all duration-300">
-              ${iconHtml}
-            </div>
-            <div class="flex items-center gap-1.5 text-xs font-medium text-zinc-400 bg-barber-black/60 px-3 py-1 rounded-full border border-white/5">
-              ${icons.clock}
-              <span>${service.duration}</span>
-            </div>
-          </div>
-
           <h3 class="font-display text-xl font-bold text-white group-hover:text-zinc-100 transition-colors">
             ${service.name}
           </h3>
