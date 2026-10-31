@@ -68,7 +68,7 @@ export const barbershopConfig = {
       },
       {
         title: "Privacidade & Conforto Absoluto",
-        desc: "Ambiente reservado a portas fechadas, café espresso nobre, cerveja artesanal selecionada e total discrição."
+        desc: "Ambiente reservado a portas fechadas, climatizado, com som ambiente suave e total discrição."
       }
     ],
     imagePrimary: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85",
@@ -298,11 +298,6 @@ export const barbershopConfig = {
       icon: "award",
       title: "Sempre as Mesmas Mãos",
       description: "Esqueça a rotatividade de barbeiros. Seu corte e sua barba serão sempre realizados pelo mesmo profissional experiente, conhecedor exato do seu estilo."
-    },
-    {
-      icon: "coffee",
-      title: "Ambiente Privativo & Conforto",
-      description: "Sem conversas paralelas ou agitação de salão tradicional. Desfrute de um ambiente climatizado, espresso nobre de grãos selecionados e cerveja artesanal como cortesia."
     },
     {
       icon: "shield-check",
