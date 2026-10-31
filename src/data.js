@@ -36,7 +36,7 @@ export const barbershopConfig = {
   // Mídias do Banner Principal (Hero)
   hero: {
     title: "SEU ESTILO. MINHA ASSINATURA.",
-    subtitle: "Atendimento 100% individual e exclusivo em estúdio privativo. Uma experiência feita sob medida para valorizar sua imagem.",
+    subtitle: "Cortes cirúrgicos, fade com transição limpa e barba esculpida na navalha. Técnica, precisão milimétrica e visagismo sob medida.",
     videoUrl: "./assets/video/barber-hero.mp4",
     videoAltUrl: "https://assets.mixkit.co/videos/43242/43242-720.mp4",
     posterUrl: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1920&q=80",
@@ -44,35 +44,35 @@ export const barbershopConfig = {
     ctaSecondary: "CONHEÇA MEU TRABALHO",
   },
 
-  // Sobre o Barbeiro & Proposta do Estúdio Privativo
+  // Sobre o Barbeiro & Foco no Trabalho
   about: {
-    badge: "STUDIO PRIVATIVO",
+    badge: "MESTRE BARBEIRO",
     title: "TRADIÇÃO NO CORTE. PERSONALIDADE NO ESTILO.",
     paragraphs: [
-      "Acredito que o corte de cabelo e o desenho da barba são sua assinatura visual mais marcante. Por isso, criei um espaço onde o conceito de barbearia tradicional se une ao atendimento privativo e reservado de alto padrão.",
-      "Aqui você não é apenas mais um cliente numa fila de espera. O estúdio opera a portas fechadas, com atendimento exclusivo a um único cliente por horário. Dedico tempo integral para entender suas preferências, analisar os traços do seu rosto com técnicas de visagismo e entregar um acabamento impecável.",
-      "Um ambiente reservado, confortável e silencioso, equipado com o que há de mais refinado em ferramentas e cosméticos de padrão internacional, pensado para que você desacelere e renove sua imagem com confiança máxima."
+      "O corte de cabelo e o alinhamento da barba definem sua presença e autoridade. Meu trabalho é guiado pela precisão técnica em cada passada de máquina, tesoura e navalha.",
+      "Cada atendimento é dedicado a entregar o corte ideal para a sua anatomia capilar. Analiso o sentido de crescimento dos fios, densidade, redemoinhos e o formato do seu rosto através do visagismo técnico.",
+      "Utilizo navalhas com lâminas japonesas descartáveis, tesouras forjadas de alta precisão e técnicas avançadas de degradê (fade) limpo e sem marcas. Foco total no acabamento impecável e na durabilidade do seu corte."
     ],
     highlights: [
       {
-        title: "Atendimento 100% Individual",
-        desc: "Apenas uma cadeira e um cliente por horário. O estúdio é inteiramente seu durante o atendimento, sem interrupções nem pressa."
+        title: "Precisão Cirúrgica",
+        desc: "Linhas nítidas, degradê com transição limpa e simetria rigorosa no corte e na barba."
       },
       {
         title: "Sempre as Mesmas Mãos",
-        desc: "Você sempre será atendido exclusivamente por mim. Consistência absoluta, sem surpresas e com padrão inegociável de qualidade."
+        desc: "Você sempre corta com o mesmo barbeiro, garantindo consistência técnica em todos os atendimentos."
       },
       {
-        title: "Visagismo Sob Medida",
-        desc: "Análise aprofundada da estrutura do seu rosto, densidade dos fios e redemoinhos para alinhar corte e barba ao seu estilo de vida."
+        title: "Visagismo Aplicado",
+        desc: "Estudo detalhado do formato facial para valorizar suas linhas de mandíbula e expressão."
       },
       {
-        title: "Privacidade & Conforto Absoluto",
-        desc: "Ambiente reservado a portas fechadas, climatizado, com som ambiente suave e total discrição."
+        title: "Ferramentas Profissionais",
+        desc: "Lâminas descartáveis de padrão cirúrgico, tesouras forjadas a laser e esterilização rigorosa."
       }
     ],
     imagePrimary: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85",
-    imageSecondary: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=85",
+    imageSecondary: "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?auto=format&fit=crop&w=800&q=85",
   },
 
   // Serviços e Preços (Facilmente Editáveis)
@@ -287,41 +287,41 @@ export const barbershopConfig = {
     }
   ],
 
-  // Diferenciais Exclusivos do Barbeiro Solo (Studio Privativo)
+  // Diferenciais Focados Exclusivamente no Trabalho & Técnica
   differentials: [
     {
-      icon: "user-check",
-      title: "Atendimento 100% Individual",
-      description: "Uma cadeira, um cliente por horário. O estúdio fica a portas fechadas, reservado inteiramente para você, garantindo tranquilidade, foco e discrição total."
+      icon: "zap",
+      title: "Precisão & Acabamento Cirúrgico",
+      description: "Degradê suave sem marcas de transição, linhas frontais perfeitamente alinhadas e contornos na navalha com simetria milimétrica."
     },
     {
       icon: "award",
       title: "Sempre as Mesmas Mãos",
-      description: "Esqueça a rotatividade de barbeiros. Seu corte e sua barba serão sempre realizados pelo mesmo profissional experiente, conhecedor exato do seu estilo."
+      description: "Sem rotatividade. Seu corte e sua barba serão executados sempre pelo mesmo barbeiro, garantindo consistência técnica em cada atendimento."
+    },
+    {
+      icon: "user-check",
+      title: "Visagismo Técnico Sob Medida",
+      description: "Estudo individual do caimento dos fios, redemoinhos e proporções do rosto para valorizar suas linhas naturais com técnica apurada."
     },
     {
       icon: "shield-check",
-      title: "Cosméticos & Higiene Rigorosa",
-      description: "Lâminas descartáveis descartadas na sua frente, ferramentas esterilizadas em autoclave de grau hospitalar e produtos dermatológicos importados."
-    },
-    {
-      icon: "heart-handshake",
-      title: "Pontualidade & Zero Espera",
-      description: "Horários agendados rigorosamente respeitados. Você não perde tempo na recepção e recebe atendimento dedicado com todo o tempo que seu corte merece."
+      title: "Ferramentas & Higiene Cirúrgica",
+      description: "Lâminas descartáveis descartadas na sua frente, tesouras forjadas a laser e esterilização de grau hospitalar em todo o instrumental."
     }
   ],
 
   // Chamada Final (CTA)
   finalCta: {
     title: "SEU PRÓXIMO CORTE COMEÇA AQUI.",
-    text: "Reserve seu horário exclusivo e garanta seu atendimento individual no estúdio privativo.",
+    text: "Reserve seu horário exclusivo e garanta seu atendimento individual focado no seu corte.",
     buttonText: "AGENDAR PELO WHATSAPP",
     subtext: "Atendimento exclusivo com hora marcada • Confirmação direta no WhatsApp",
   },
 
   // Rodapé e Links
   footer: {
-    description: "Estúdio privativo de barbearia focado em atendimento 100% individual, visagismo e acabamento de alto padrão. Uma experiência sob medida para homens exigentes.",
+    description: "Cortes masculinos de alta precisão, visagismo técnico e barboterapia tradicional. Foco absoluto na técnica, na navalha e no acabamento de alto padrão.",
     links: [
       { label: "Início", href: "#inicio" },
       { label: "Sobre mim", href: "#sobre" },
@@ -330,8 +330,8 @@ export const barbershopConfig = {
       { label: "Diferenciais", href: "#diferenciais" },
       { label: "Contato & Localização", href: "#contato" },
     ],
-    copyright: "© {year} Barbearia Assinatura • Studio Privado. Todos os direitos reservados.",
-    tagline: "Atendimento individual e exclusivo para quem exige o melhor."
+    copyright: "© {year} Barbearia Assinatura. Todos os direitos reservados.",
+    tagline: "Precisão técnica e acabamento para quem exige o melhor."
   }
 };
 
