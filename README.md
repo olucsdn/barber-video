@@ -39,20 +39,20 @@ Para alterar o WhatsApp, nome ou endereço:
 ```javascript
 // src/data.js
 export const barbershopConfig = {
-  name: "ASSINATURA",
-  subtitle: "BARBEIRO",
-  barberName: "Lucas Silva",
+  name: "LEO'S",
+  subtitle: "BARBEARIA",
+  barberName: "Leonardo",
   phone: "(38) 98839-9608",
   whatsappNumber: "5538988399608",
-  instagramUrl: "https://instagram.com/barbearia.assinatura",
+  instagramUrl: "https://www.instagram.com/leo_cort3z",
   address: {
-    street: "Rua Oscar Freire",
-    number: "1280",
-    complement: "Sala 42",
-    neighborhood: "Jardins",
-    city: "São Paulo",
-    state: "SP",
-    cep: "01426-000",
+    street: "R. Um",
+    number: "124",
+    complement: "",
+    neighborhood: "Jardim Primavera",
+    city: "Montes Claros",
+    state: "MG",
+    cep: "39402-532",
   },
   // ...
 };

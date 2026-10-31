@@ -21,16 +21,16 @@ export const barbershopConfig = {
   
   // Endereço e Geolocalização
   address: {
-    street: "Rua Oscar Freire",
-    number: "1280",
-    complement: "Sala 42",
-    neighborhood: "Jardins",
-    city: "São Paulo",
-    state: "SP",
-    cep: "01426-000",
-    full: "Rua Oscar Freire, 1280, Sala 42 - Jardins, São Paulo - SP, 01426-000",
-    googleMapsLink: "https://maps.google.com/?q=Rua+Oscar+Freire+1280+Jardins+Sao+Paulo",
-    embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.146958897597!2d-46.66986402377317!3d-23.56316277879783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d0426b647b%3A0x6b2b7ff9c2ff1b06!2sR.%20Oscar%20Freire%2C%201280%20-%20Cerqueira%20C%C3%A9sar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001426-000!5e0!3m2!1spt-BR!2sbr!4v1714500000000!5m2!1spt-BR!2sbr",
+    street: "R. Um",
+    number: "124",
+    complement: "",
+    neighborhood: "Jardim Primavera",
+    city: "Montes Claros",
+    state: "MG",
+    cep: "39402-532",
+    full: "R. Um, 124 - Jardim Primavera, Montes Claros - MG, 39402-532",
+    googleMapsLink: "https://maps.app.goo.gl/EcNX3bJfGypRCKJ58?g_st=ac",
+    embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.6148!2d-43.8140928!3d-16.7018496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x754ab02b5cb4c55%3A0x82a0fed8a64810bc!2sL%C3%89O%20BARBER!5e0!3m2!1spt-BR!2sbr!4v1714500000000!5m2!1spt-BR!2sbr",
   },
 
   // Mídias do Banner Principal (Hero)
