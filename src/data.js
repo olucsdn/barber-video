@@ -51,7 +51,7 @@ export const barbershopConfig = {
     paragraphs: [
       "Trabalho sozinho e levo a sério cada cliente que senta na minha cadeira. O meu foco é simples e direto: fazer um trabalho bem feito, com calma, atenção e exatamente do jeito que você gosta.",
       "Seja um degradê disfarçado, um corte social clássico na tesoura ou aquele acerto caprichado na barba e no pezinho, você senta, explica como quer e sai com o visual alinhado.",
-      "Aqui você não tem surpresas: sempre usa lâmina descartável nova, navalha bem passada e materiais limpos para cada atendimento. Atendimento direto comigo, sem enrolação e sem pressa."
+      "Aqui você não tem surpresas: atendimento direto comigo, sem enrolação e sem pressa, respeitando o seu estilo e o seu tempo."
     ],
     highlights: [
       {
@@ -67,8 +67,8 @@ export const barbershopConfig = {
         desc: "Tempo dedicado a cada cliente para deixar o corte alinhado e bem finalizado."
       },
       {
-        title: "Higiene & Lâmina Nova",
-        desc: "Lâmina descartável nova aberta na sua frente e materiais sempre limpos."
+        title: "Sem Fila de Espera",
+        desc: "Atendimento com horário marcado para você não perder tempo esperando."
       }
     ],
     imagePrimary: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85",
@@ -245,7 +245,7 @@ export const barbershopConfig = {
       category: "barba",
       categoryName: "Barba",
       title: "Barba Feita na Toalha Quente",
-      description: "Barbear clássico com toalha morna e navalha descartável afiada.",
+      description: "Barbear clássico com toalha morna e acabamento alinhado no capricho.",
       imageUrl: "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?auto=format&fit=crop&w=1000&q=85",
       thumbnailUrl: "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?auto=format&fit=crop&w=600&q=80",
     },
@@ -303,11 +303,6 @@ export const barbershopConfig = {
       icon: "user-check",
       title: "Atendimento no seu Tempo",
       description: "Sem pressa e sem correria. Cada horário é reservado para fazer o seu corte com calma e atenção."
-    },
-    {
-      icon: "shield-check",
-      title: "Higiene em Primeiro Lugar",
-      description: "Lâmina descartável nova aberta na sua frente e bancada com materiais sempre limpos."
     }
   ],
 
