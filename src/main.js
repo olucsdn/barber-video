@@ -27,10 +27,10 @@ function initNavbar() {
   // Sticky scroll effect
   const handleScroll = () => {
     if (window.scrollY > 40) {
-      navbar.classList.add('bg-barber-black/90', 'backdrop-blur-md', 'py-4', 'border-b', 'border-gold-500/20', 'shadow-2xl');
+      navbar.classList.add('bg-barber-black/95', 'backdrop-blur-md', 'py-4', 'border-b', 'border-white/10', 'shadow-2xl');
       navbar.classList.remove('py-6', 'bg-transparent');
     } else {
-      navbar.classList.remove('bg-barber-black/90', 'backdrop-blur-md', 'py-4', 'border-b', 'border-gold-500/20', 'shadow-2xl');
+      navbar.classList.remove('bg-barber-black/95', 'backdrop-blur-md', 'py-4', 'border-b', 'border-white/10', 'shadow-2xl');
       navbar.classList.add('py-6', 'bg-transparent');
     }
   };
@@ -95,17 +95,22 @@ function renderAboutHighlights() {
   const container = document.getElementById('about-highlights-grid');
   if (!container) return;
 
-  container.innerHTML = barbershopConfig.about.highlights.map(item => `
-    <div class="flex items-start gap-4 p-4 rounded-xl bg-barber-surface/60 border border-gold-500/10 hover:border-gold-500/30 transition-colors">
-      <div class="w-10 h-10 rounded-lg bg-gold-500/10 text-gold-400 flex items-center justify-center shrink-0">
-        ${icons['check-circle']}
+  container.innerHTML = barbershopConfig.about.highlights.map((item, index) => {
+    const isRed = index % 2 === 0;
+    const iconColor = isRed ? 'bg-red-500/10 text-red-400 border-red-500/20' : 'bg-blue-500/10 text-blue-400 border-blue-500/20';
+    const hoverBorder = isRed ? 'hover:border-red-500/30' : 'hover:border-blue-500/30';
+    return `
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-barber-surface/60 border border-white/5 ${hoverBorder} transition-colors">
+        <div class="w-10 h-10 rounded-lg ${iconColor} border flex items-center justify-center shrink-0">
+          ${icons['check-circle']}
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-white text-base tracking-wide">${item.title}</h4>
+          <p class="text-zinc-400 text-sm mt-1 leading-relaxed">${item.desc}</p>
+        </div>
       </div>
-      <div>
-        <h4 class="font-display font-semibold text-white text-base tracking-wide">${item.title}</h4>
-        <p class="text-zinc-400 text-sm mt-1 leading-relaxed">${item.desc}</p>
-      </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
 /**
@@ -115,21 +120,38 @@ function renderServices() {
   const container = document.getElementById('services-grid');
   if (!container) return;
 
-  container.innerHTML = barbershopConfig.services.map(service => {
+  container.innerHTML = barbershopConfig.services.map((service, index) => {
     const iconHtml = icons[service.icon] || icons.scissors;
     const bookingUrl = getWhatsAppBookingUrl(service.name);
+    const isRedCard = service.id === 'degra-fade' || (index % 2 === 0 && !service.featured);
+    const accentText = isRedCard ? 'text-red-400' : 'text-blue-400';
+    const accentBorder = isRedCard ? 'border-red-500/20 group-hover:border-red-500/40' : 'border-blue-500/20 group-hover:border-blue-500/40';
+    const accentBg = isRedCard ? 'bg-red-500/10 text-red-400' : 'bg-blue-500/10 text-blue-400';
+    
+    // Featured badges & styling
+    let ringClass = '';
+    let badgeHtml = '';
+    let btnClass = isRedCard
+      ? 'bg-red-600/15 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/30 hover:border-red-600'
+      : 'bg-blue-600/15 hover:bg-blue-600 text-blue-300 hover:text-white border border-blue-500/30 hover:border-blue-500';
+
+    if (service.id === 'degra-fade') {
+      ringClass = 'ring-1 ring-red-500/50 shadow-lg shadow-red-500/10';
+      badgeHtml = `<div class="absolute -top-3 right-6 bg-gradient-to-r from-red-600 to-red-500 text-white font-bold text-xs tracking-wider uppercase px-3 py-1 rounded-full shadow-lg">Mais Pedido</div>`;
+      btnClass = 'bg-red-600 hover:bg-red-500 text-white font-bold border border-red-500 shadow-md shadow-red-600/30';
+    } else if (service.id === 'combo-corte-barba') {
+      ringClass = 'ring-1 ring-blue-500/50 shadow-lg shadow-blue-500/10';
+      badgeHtml = `<div class="absolute -top-3 right-6 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold text-xs tracking-wider uppercase px-3 py-1 rounded-full shadow-lg">Mais Escolhido</div>`;
+      btnClass = 'bg-blue-600 hover:bg-blue-500 text-white font-bold border border-blue-500 shadow-md shadow-blue-600/30';
+    }
 
     return `
-      <div class="card-luxury rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative group ${service.featured ? 'ring-1 ring-gold-500/40 shadow-gold' : ''}">
-        ${service.badge ? `
-          <div class="absolute -top-3 right-6 bg-gradient-to-r from-gold-600 to-gold-400 text-barber-black font-semibold text-xs tracking-wider uppercase px-3 py-1 rounded-full shadow-lg">
-            ${service.badge}
-          </div>
-        ` : ''}
+      <div class="card-luxury rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative group ${ringClass}">
+        ${badgeHtml}
 
         <div>
           <div class="flex items-center justify-between gap-4 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center border border-gold-500/20 group-hover:scale-110 group-hover:bg-gold-500/20 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl ${accentBg} flex items-center justify-center border ${accentBorder} group-hover:scale-110 transition-all duration-300">
               ${iconHtml}
             </div>
             <div class="flex items-center gap-1.5 text-xs font-medium text-zinc-400 bg-barber-black/60 px-3 py-1 rounded-full border border-white/5">
@@ -138,7 +160,7 @@ function renderServices() {
             </div>
           </div>
 
-          <h3 class="font-display text-xl font-bold text-white group-hover:text-gold-300 transition-colors">
+          <h3 class="font-display text-xl font-bold text-white group-hover:text-zinc-100 transition-colors">
             ${service.name}
           </h3>
 
@@ -150,11 +172,11 @@ function renderServices() {
         <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-4">
           <div>
             <span class="block text-[11px] uppercase tracking-wider text-zinc-400">Valor</span>
-            <span class="font-display text-2xl font-bold text-gold-400 tracking-tight">${service.price}</span>
+            <span class="font-display text-2xl font-bold ${accentText} tracking-tight">${service.price}</span>
           </div>
 
           <a href="${bookingUrl}" target="_blank" rel="noopener noreferrer"
-             class="btn-shine inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gold-500/15 hover:bg-gold-500 text-gold-300 hover:text-barber-black text-xs font-bold tracking-wider uppercase transition-all duration-300 border border-gold-500/30 hover:border-gold-500">
+             class="btn-shine inline-flex items-center gap-2 px-4 py-2.5 rounded-xl ${btnClass} text-xs font-bold tracking-wider uppercase transition-all duration-300">
             <span>Agendar</span>
             ${icons['arrow-right']}
           </a>
@@ -180,7 +202,7 @@ function renderGallery() {
   if (tabsContainer) {
     tabsContainer.innerHTML = barbershopConfig.galleryCategories.map(cat => `
       <button data-category="${cat.id}"
-              class="gallery-filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${cat.id === currentCategory ? 'bg-gold-500 text-barber-black shadow-lg shadow-gold-500/20' : 'bg-barber-card/80 text-zinc-400 hover:text-white border border-white/5 hover:border-gold-500/30'}">
+              class="gallery-filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${cat.id === currentCategory ? 'bg-red-600 text-white shadow-lg shadow-red-600/20' : 'bg-barber-card/80 text-zinc-400 hover:text-white border border-white/5 hover:border-blue-500/30'}">
         ${cat.name}
       </button>
     `).join('');
@@ -201,29 +223,35 @@ function renderGallery() {
     : barbershopConfig.galleryItems.filter(item => item.category === currentCategory);
 
   // Render Grid
-  gridContainer.innerHTML = filteredGallery.map((item, index) => `
-    <div data-index="${index}" class="gallery-card group relative aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer bg-barber-card border border-white/5 hover:border-gold-500/40 transition-all duration-500 shadow-xl">
-      <img src="${item.thumbnailUrl}" alt="${item.title}" loading="lazy"
-           class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 filter brightness-95 group-hover:brightness-105" />
-      
-      <div class="absolute inset-0 bg-gradient-to-t from-barber-black via-barber-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-      
-      <div class="absolute top-4 left-4">
-        <span class="text-[11px] font-semibold tracking-widest uppercase px-3 py-1 rounded-full bg-barber-black/80 text-gold-400 border border-gold-500/20 backdrop-blur-md">
-          ${item.categoryName}
-        </span>
-      </div>
+  gridContainer.innerHTML = filteredGallery.map((item, index) => {
+    const isRed = index % 2 === 0;
+    const badgeColor = isRed ? 'text-red-400 border-red-500/30' : 'text-blue-400 border-blue-500/30';
+    const hoverBorder = isRed ? 'hover:border-red-500/40' : 'hover:border-blue-500/40';
 
-      <div class="absolute bottom-0 inset-x-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-        <h4 class="font-display font-bold text-white text-lg tracking-wide group-hover:text-gold-300 transition-colors">
-          ${item.title}
-        </h4>
-        <p class="text-zinc-300 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
-          ${item.description}
-        </p>
+    return `
+      <div data-index="${index}" class="gallery-card group relative aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer bg-barber-card border border-white/5 ${hoverBorder} transition-all duration-500 shadow-xl">
+        <img src="${item.thumbnailUrl}" alt="${item.title}" loading="lazy"
+             class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 filter brightness-95 group-hover:brightness-105" />
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-barber-black via-barber-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+        
+        <div class="absolute top-4 left-4">
+          <span class="text-[11px] font-semibold tracking-widest uppercase px-3 py-1 rounded-full bg-barber-black/80 ${badgeColor} border backdrop-blur-md">
+            ${item.categoryName}
+          </span>
+        </div>
+
+        <div class="absolute bottom-0 inset-x-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+          <h4 class="font-display font-bold text-white text-lg tracking-wide group-hover:text-zinc-100 transition-colors">
+            ${item.title}
+          </h4>
+          <p class="text-zinc-300 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
+            ${item.description}
+          </p>
+        </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 
   // Attach Lightbox Trigger
   gridContainer.querySelectorAll('.gallery-card').forEach(card => {
@@ -321,14 +349,22 @@ function renderDifferentials() {
 
   container.innerHTML = barbershopConfig.differentials.map((diff, index) => {
     const iconHtml = icons[diff.icon] || icons['user-check'];
+    const isRed = index % 2 === 0;
+    const accentBg = isRed
+      ? 'bg-gradient-to-br from-red-600/20 to-red-800/10 text-red-400 border-red-500/30 group-hover:bg-red-600/25'
+      : 'bg-gradient-to-br from-blue-600/20 to-blue-800/10 text-blue-400 border-blue-500/30 group-hover:bg-blue-600/25';
+    const numColor = isRed ? 'text-red-500/60' : 'text-blue-500/60';
+    const borderHover = isRed ? 'hover:border-red-500/40' : 'hover:border-blue-500/40';
+    const titleHover = isRed ? 'group-hover:text-red-300' : 'group-hover:text-blue-300';
+
     return `
-      <div class="p-8 rounded-2xl bg-barber-card/60 border border-gold-500/15 hover:border-gold-500/40 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group shadow-xl">
+      <div class="p-8 rounded-2xl bg-barber-card/60 border border-white/5 ${borderHover} transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group shadow-xl">
         <div>
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-500/20 to-gold-700/10 text-gold-400 flex items-center justify-center border border-gold-500/30 group-hover:scale-110 group-hover:bg-gold-500/25 transition-transform duration-300 mb-6">
+          <div class="w-14 h-14 rounded-2xl ${accentBg} flex items-center justify-center border group-hover:scale-110 transition-transform duration-300 mb-6">
             ${iconHtml}
           </div>
-          <span class="text-xs font-mono text-gold-500/60 font-semibold">0${index + 1}</span>
-          <h3 class="font-display text-xl font-bold text-white mt-1 group-hover:text-gold-300 transition-colors">
+          <span class="text-xs font-mono ${numColor} font-semibold">0${index + 1}</span>
+          <h3 class="font-display text-xl font-bold text-white mt-1 ${titleHover} transition-colors">
             ${diff.title}
           </h3>
           <p class="text-zinc-400 text-sm mt-3 leading-relaxed">

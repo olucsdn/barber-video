@@ -4,90 +4,104 @@
 
 @layer base {
   :root {
-    --color-gold: #c5a880;
-    --color-gold-light: #dfcaaa;
-    --color-gold-dark: #9e8057;
-    --color-gold-accent: #d4af37;
-    --color-dark: #080808;
-    --color-charcoal: #0f0f11;
+    --color-barber-red: #dc2626;
+    --color-barber-blue: #2563eb;
+    --color-barber-white: #ffffff;
+    --color-dark: #080809;
+    --color-charcoal: #0e0f12;
   }
 
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
-    background-color: #080808;
+    background-color: #080809;
   }
 
   body {
-    background-color: #080808;
-    color: #ede8e1;
+    background-color: #080809;
+    color: #f1f5f9;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Custom luxury scrollbar */
+  /* Custom barber pole scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #080808;
+    background: #080809;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #2a251e;
+    background: #1c1d24;
     border-radius: 4px;
-    border: 1px solid rgba(197, 168, 128, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #c5a880;
+    background: #dc2626;
   }
 
   ::selection {
-    background: rgba(197, 168, 128, 0.3);
+    background: rgba(220, 38, 38, 0.4);
     color: #ffffff;
   }
 }
 
-/* Luxury visual accents */
-.gold-text-gradient {
-  background: linear-gradient(135deg, #f5e5c9 0%, #c5a880 50%, #9e8057 100%);
+/* Barber Pole Ribbon / Stripes */
+.barber-pole-bar {
+  background: repeating-linear-gradient(
+    135deg,
+    #dc2626 0px,
+    #dc2626 14px,
+    #ffffff 14px,
+    #ffffff 28px,
+    #2563eb 28px,
+    #2563eb 42px,
+    #ffffff 42px,
+    #ffffff 56px
+  );
+}
+
+/* Barber Pole text & accents */
+.barber-text-gradient {
+  background: linear-gradient(135deg, #f87171 0%, #ffffff 48%, #60a5fa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gold-border-gradient {
-  border-image: linear-gradient(135deg, rgba(223, 202, 170, 0.6), rgba(197, 168, 128, 0.2), rgba(158, 128, 87, 0.4)) 1;
+.barber-red-gradient {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.gold-glow {
-  box-shadow: 0 0 25px rgba(197, 168, 128, 0.2);
-}
-
-.gold-glow-hover:hover {
-  box-shadow: 0 0 35px rgba(197, 168, 128, 0.35);
+.barber-blue-gradient {
+  background: linear-gradient(135deg, #60a5fa 0%, #2563eb 50%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .card-luxury {
-  background: linear-gradient(180deg, rgba(26, 26, 30, 0.8) 0%, rgba(18, 18, 22, 0.95) 100%);
-  border: 1px solid rgba(197, 168, 128, 0.12);
+  background: linear-gradient(180deg, rgba(25, 27, 34, 0.85) 0%, rgba(18, 19, 24, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-luxury:hover {
-  border-color: rgba(197, 168, 128, 0.4);
+  border-color: rgba(59, 130, 246, 0.35);
   transform: translateY(-4px);
-  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(197, 168, 128, 0.15);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(37, 99, 235, 0.15);
 }
 
 /* Hero Video Overlay & Vignette */
 .hero-overlay {
-  background: radial-gradient(circle at center, rgba(8, 8, 8, 0.35) 0%, rgba(8, 8, 8, 0.7) 65%, rgba(8, 8, 8, 0.95) 100%),
-              linear-gradient(180deg, rgba(8, 8, 8, 0.85) 0%, rgba(8, 8, 8, 0.2) 40%, rgba(8, 8, 8, 0.5) 70%, #080808 100%);
+  background: radial-gradient(circle at center, rgba(8, 8, 9, 0.35) 0%, rgba(8, 8, 9, 0.7) 65%, rgba(8, 8, 9, 0.95) 100%),
+              linear-gradient(180deg, rgba(8, 8, 9, 0.85) 0%, rgba(8, 8, 9, 0.2) 40%, rgba(8, 8, 9, 0.5) 70%, #080809 100%);
 }
 
 /* Subtle animated pulse for WhatsApp Floating Button */
