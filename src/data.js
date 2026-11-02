@@ -69,11 +69,8 @@ export const barbershopConfig = {
         desc: "Tempo suficiente reservado para finalizar cada acabamento com calma."
       }
     ],
-    // Espaço reservado para foto real do barbeiro
-    photoPlaceholder: {
-      label: "Fotografia do Barbeiro",
-      aspect: "aspect-[4/5]",
-    }
+    // Foto real oficial do barbeiro Leonardo
+    photo: "/assets/images/barber/leonardo.jpg",
   },
 
   // Especialidades e Serviços
@@ -121,71 +118,80 @@ export const barbershopConfig = {
     }
   ],
 
-  // Espaços Reservados para Fotografias Reais de Cortes
+  // Fotografias Reais de Cortes e Trabalhos (Google Maps & Instagram)
   galleryItems: [
     {
       id: 1,
-      category: "degrade",
-      categoryName: "Degradê",
-      title: "Skin Fade com Topo Texturizado",
-      description: "Disfarçado navalhado na pele com linhas nítidas e topo texturizado.",
+      category: "platinado",
+      categoryName: "Química & Fade",
+      title: "Platinado / Nevou com Fade",
+      description: "Descoloração global no tom branco platinado com degradê disfarçado nas laterais.",
+      image: "/assets/images/cuts/platinado-fade.jpg"
     },
     {
       id: 2,
-      category: "barba",
-      categoryName: "Barba",
-      title: "Barba Alinhada na Navalha",
-      description: "Contorno limpo nas bochechas e no pescoço com acabamento toalha morna.",
+      category: "freestyle",
+      categoryName: "Freestyle",
+      title: "Freestyle & Desenho na Navalha",
+      description: "Linhas curvas e pontiagudas personalizadas com navalha e transição limpa na pele.",
+      image: "/assets/images/cuts/freestyle-navalhado.jpg"
     },
     {
       id: 3,
-      category: "classico",
-      categoryName: "Clássicos & Social",
-      title: "Corte Clássico Penteado",
-      description: "Caimento tradicional trabalhado na tesoura com finalização em pomada fosca.",
+      category: "trancas",
+      categoryName: "Tranças & Estilo",
+      title: "Tranças Nagô com Fade Lateral",
+      description: "Tranças de raiz alinhadas e simétricas com fade sutil na têmpora e pezinho limpo.",
+      image: "/assets/images/cuts/trancas-nago-fade.jpg"
     },
     {
       id: 4,
       category: "degrade",
       categoryName: "Degradê",
-      title: "Mid Fade com Pezinho Reto",
-      description: "Degradê na altura média com acabamento frontal e costeletas milimétricas.",
+      title: "Moicano Disfarçado com Risco",
+      description: "Fade na altura da orelha preservando volume traseiro com risco trabalhado na lateral.",
+      image: "/assets/images/cuts/moicano-risco.jpg"
     },
     {
       id: 5,
-      category: "barba",
-      categoryName: "Barba",
-      title: "Aparação e Desenho de Barba",
-      description: "Volume reduzido no ponto certo mantendo linhas retas e marcadas.",
+      category: "classico",
+      categoryName: "Clássico & Social",
+      title: "Corte Social com Taper Fade",
+      description: "Visual executivo limpo, disfarçado suave na nuca e costeletas, topo no caimento natural.",
+      image: "/assets/images/cuts/social-taper-fade.jpg"
     },
     {
       id: 6,
-      category: "classico",
-      categoryName: "Clássicos & Social",
-      title: "Corte Social Alinhado",
-      description: "Laterais baixas sem raspar e topo alinhado para o dia a dia profissional.",
+      category: "degrade",
+      categoryName: "Degradê",
+      title: "Mid Fade com Pezinho Reto",
+      description: "Degradê na altura média bem disfarçado com alinhamento frontal milimétrico na navalha.",
+      image: "/assets/images/cuts/mid-fade-navalha.jpg"
     },
     {
       id: 7,
-      category: "degrade",
-      categoryName: "Degradê",
-      title: "Low Fade Disfarçado",
-      description: "Degradê sutil e baixo rente à orelha preservando densidade lateral.",
+      category: "cabelo",
+      categoryName: "Corte & Tesoura",
+      title: "Corte Moderno com Tesoura e Taper",
+      description: "Laterais suaves com acabamento impecável do contorno e trabalho artesanal na tesoura.",
+      image: "/assets/images/cuts/corte-jovem-tesoura.jpg"
     },
     {
       id: 8,
-      category: "barba",
-      categoryName: "Barba",
-      title: "Barba Desenhada e Queixo Definido",
-      description: "Linha do maxilar limpa e simétrica na navalha com toalha aquecida.",
+      category: "degrade",
+      categoryName: "Degradê",
+      title: "Taper Fade Disfarçado",
+      description: "Transição suave e sem marcas na nuca e costeletas mantendo a densidade superior.",
+      image: "/assets/images/cuts/taper-fade-acabamento.jpg"
     },
     {
       id: 9,
-      category: "classico",
-      categoryName: "Clássicos & Social",
-      title: "Corte 100% na Tesoura",
-      description: "Sem máquina: trabalho artesanal na tesoura respeitando o caimento natural.",
-    },
+      category: "marca",
+      categoryName: "Oficial",
+      title: "Identidade Oficial LÉO BARBER",
+      description: "Emblema 3D e marca oficial da barbearia registrada no Google Maps e Instagram.",
+      image: "/assets/images/cuts/identidade-leo-barber.jpg"
+    }
   ],
 
   // Diferenciais

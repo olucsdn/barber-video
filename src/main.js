@@ -155,34 +155,30 @@ function renderGallery() {
     const bookingUrl = getWhatsAppBookingUrl(item.title);
 
     return `
-      <div class="group relative aspect-[4/5] rounded-xl overflow-hidden border border-zinc-800/80 hover:border-zinc-600 bg-dark-900 transition-all duration-300 flex flex-col justify-between p-6">
+      <div class="group relative aspect-[4/5] rounded-2xl overflow-hidden border border-zinc-800 hover:border-zinc-600 bg-dark-900 transition-all duration-300 flex flex-col justify-between p-6 shadow-xl">
         
-        <!-- Topo: Categoria & Indicador de Espaço -->
-        <div class="flex items-center justify-between">
-          <span class="text-[10px] font-mono font-semibold tracking-widest uppercase text-white border border-zinc-800 bg-dark-950/80 px-2.5 py-1 rounded">
+        <!-- Foto Real de Fundo com Zoom Suave no Hover -->
+        <img src="${item.image}" alt="${item.title}" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+        
+        <!-- Gradiente para Contraste e Legibilidade Editorial -->
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/60 to-dark-950/20"></div>
+
+        <!-- Topo: Categoria & Indicador -->
+        <div class="relative z-10 flex items-center justify-between">
+          <span class="text-[10px] font-mono font-semibold tracking-widest uppercase text-white border border-zinc-700/80 bg-dark-950/80 backdrop-blur-sm px-2.5 py-1 rounded">
             ${item.categoryName}
           </span>
-          <span class="text-zinc-600 group-hover:text-white transition-colors" title="Espaço para Foto Real">
-            ${icons.camera}
-          </span>
-        </div>
-
-        <!-- Centro: Marca d'água Monograma & Moldura Discreta -->
-        <div class="my-auto flex flex-col items-center justify-center text-center py-6">
-          <div class="w-16 h-16 rounded-xl border border-dashed border-zinc-800 flex items-center justify-center text-zinc-700 group-hover:border-zinc-700 group-hover:text-zinc-500 transition-all">
-            <span class="font-display font-bold text-2xl">L</span>
-          </div>
-          <span class="text-[11px] font-mono tracking-wider text-white uppercase mt-3">
-            Espaço para Foto
+          <span class="text-[10px] font-mono text-zinc-300 bg-dark-950/70 backdrop-blur-sm border border-zinc-800 px-2 py-0.5 rounded">
+            Foto Real
           </span>
         </div>
 
         <!-- Rodapé: Nome do Estilo & Botão WhatsApp -->
-        <div class="pt-4 border-t border-zinc-850">
+        <div class="relative z-10 pt-4 border-t border-zinc-800/80 bg-dark-950/80 backdrop-blur-md -mx-6 -mb-6 p-6">
           <h4 class="font-display font-bold text-white text-base tracking-wide leading-snug">
             ${item.title}
           </h4>
-          <p class="text-white text-xs mt-1 leading-relaxed line-clamp-2">
+          <p class="text-zinc-300 text-xs mt-1 leading-relaxed line-clamp-2 font-light">
             ${item.description}
           </p>
 
