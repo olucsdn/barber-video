@@ -69,8 +69,11 @@ export const barbershopConfig = {
         desc: "Tempo suficiente reservado para finalizar cada acabamento com calma."
       }
     ],
-    // Foto real oficial do barbeiro Leonardo
-    photo: "/assets/images/barber/leonardo.jpg",
+    // Espaço reservado para foto do barbeiro
+    photoPlaceholder: {
+      label: "Fotografia do Barbeiro",
+      aspect: "aspect-[4/5]",
+    }
   },
 
   // Especialidades e Serviços
@@ -183,14 +186,6 @@ export const barbershopConfig = {
       title: "Taper Fade Disfarçado",
       description: "Transição suave e sem marcas na nuca e costeletas mantendo a densidade superior.",
       image: "/assets/images/cuts/taper-fade-acabamento.jpg"
-    },
-    {
-      id: 9,
-      category: "marca",
-      categoryName: "Oficial",
-      title: "Identidade Oficial LÉO BARBER",
-      description: "Emblema 3D e marca oficial da barbearia registrada no Google Maps e Instagram.",
-      image: "/assets/images/cuts/identidade-leo-barber.jpg"
     }
   ],
 
