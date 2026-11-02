@@ -213,8 +213,8 @@ export const barbershopConfig = {
     links: [
       { label: "Início", href: "#inicio" },
       { label: "Sobre", href: "#sobre" },
-      { label: "Meus Serviços", href: "#servicos" },
       { label: "Estilos", href: "#galeria" },
+      { label: "Meus Serviços", href: "#servicos" },
       { label: "Diferencial", href: "#diferenciais" },
       { label: "Localização", href: "#contato" },
     ],

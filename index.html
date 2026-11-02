@@ -83,8 +83,8 @@
       <nav class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-white">
         <a href="#inicio" class="hover:text-white transition-colors py-1">Início</a>
         <a href="#sobre" class="hover:text-white transition-colors py-1">Sobre</a>
-        <a href="#servicos" class="hover:text-white transition-colors py-1">Meus Serviços</a>
         <a href="#galeria" class="hover:text-white transition-colors py-1">Estilos</a>
+        <a href="#servicos" class="hover:text-white transition-colors py-1">Meus Serviços</a>
         <a href="#diferenciais" class="hover:text-white transition-colors py-1">Diferencial</a>
         <a href="#contato" class="hover:text-white transition-colors py-1">Localização</a>
       </nav>
@@ -127,8 +127,8 @@
       <nav class="flex flex-col gap-3 mt-8 text-sm font-semibold uppercase tracking-wider text-white">
         <a href="#inicio" class="nav-link-item py-2.5 border-b border-zinc-850 hover:text-white transition-colors">Início</a>
         <a href="#sobre" class="nav-link-item py-2.5 border-b border-zinc-850 hover:text-white transition-colors">Sobre</a>
-        <a href="#servicos" class="nav-link-item py-2.5 border-b border-zinc-850 hover:text-white transition-colors">Meus Serviços</a>
         <a href="#galeria" class="nav-link-item py-2.5 border-b border-zinc-850 hover:text-white transition-colors">Estilos</a>
+        <a href="#servicos" class="nav-link-item py-2.5 border-b border-zinc-850 hover:text-white transition-colors">Meus Serviços</a>
         <a href="#diferenciais" class="nav-link-item py-2.5 border-b border-zinc-850 hover:text-white transition-colors">Diferencial</a>
         <a href="#contato" class="nav-link-item py-2.5 border-b border-zinc-850 hover:text-white transition-colors">Localização</a>
       </nav>
@@ -293,9 +293,36 @@
   </section>
 
   <!-- ===================================================================
-       4. MEUS SERVIÇOS — MENU EDITORIAL DE BARBEARIA
+       4. GALERIA DE ESTILOS — ESPAÇOS RESERVADOS PARA FOTOS REAIS
        =================================================================== -->
-  <section id="servicos" class="py-24 sm:py-32 bg-dark-900 relative border-b border-zinc-850">
+  <section id="galeria" class="py-24 sm:py-32 bg-dark-900 relative border-b border-zinc-850">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Cabeçalho -->
+      <div class="text-left mb-10 border-b border-zinc-800 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs uppercase font-mono tracking-widest text-white">Trabalhos & Cortes</span>
+          <h2 class="font-display font-bold text-3xl sm:text-5xl text-white tracking-tight mt-2">
+            GALERIA DE ESTILOS
+          </h2>
+        </div>
+        <p class="text-white text-sm max-w-md font-light leading-relaxed">
+          Tipos de corte e barba atendidos na cadeira. Espaços preparados para inclusão das fotografias dos trabalhos reais.
+        </p>
+      </div>
+
+      <!-- Grid com Placeholders das Fotografias -->
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injetado dinamicamente via src/main.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       5. MEUS SERVIÇOS — MENU EDITORIAL DE BARBEARIA
+       =================================================================== -->
+  <section id="servicos" class="py-24 sm:py-32 bg-dark-950 relative border-b border-zinc-850">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Cabeçalho da Seção -->
@@ -317,7 +344,7 @@
       </div>
 
       <!-- Barra de Aviso: Hora Marcada -->
-      <div class="mt-12 p-6 rounded-xl border border-zinc-800 bg-dark-950 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="mt-12 p-6 rounded-xl border border-zinc-800 bg-dark-900 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="text-left">
           <h4 class="font-display font-semibold text-white text-base">Atendimento com Hora Marcada</h4>
           <p class="text-white text-xs sm:text-sm mt-0.5 font-light">Sem fila de espera: seu horário é respeitado para fazer seu corte com calma.</p>
@@ -328,33 +355,6 @@
           <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
           <span>Agendar pelo WhatsApp</span>
         </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===================================================================
-       5. GALERIA DE ESTILOS — ESPAÇOS RESERVADOS PARA FOTOS REAIS
-       =================================================================== -->
-  <section id="galeria" class="py-24 sm:py-32 bg-dark-950 relative border-b border-zinc-850">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Cabeçalho -->
-      <div class="text-left mb-10 border-b border-zinc-800 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <span class="text-xs uppercase font-mono tracking-widest text-white">Trabalhos & Cortes</span>
-          <h2 class="font-display font-bold text-3xl sm:text-5xl text-white tracking-tight mt-2">
-            GALERIA DE ESTILOS
-          </h2>
-        </div>
-        <p class="text-white text-sm max-w-md font-light leading-relaxed">
-          Tipos de corte e barba atendidos na cadeira. Espaços preparados para inclusão das fotografias dos trabalhos reais.
-        </p>
-      </div>
-
-      <!-- Grid com Placeholders das Fotografias -->
-      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Injetado dinamicamente via src/main.js -->
       </div>
 
     </div>
@@ -586,8 +586,8 @@
           <ul class="space-y-2 text-xs uppercase tracking-wider text-white">
             <li><a href="#inicio" class="hover:text-white transition-colors">Início</a></li>
             <li><a href="#sobre" class="hover:text-white transition-colors">Sobre o Barbeiro</a></li>
-            <li><a href="#servicos" class="hover:text-white transition-colors">Meus Serviços</a></li>
             <li><a href="#galeria" class="hover:text-white transition-colors">Galeria de Estilos</a></li>
+            <li><a href="#servicos" class="hover:text-white transition-colors">Meus Serviços</a></li>
             <li><a href="#diferenciais" class="hover:text-white transition-colors">Meu Diferencial</a></li>
             <li><a href="#contato" class="hover:text-white transition-colors">Localização & Contato</a></li>
           </ul>

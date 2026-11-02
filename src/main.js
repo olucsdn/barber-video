@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initHeroVideo();
   renderAboutHighlights();
-  renderServices();
   renderGallery();
+  renderServices();
   renderDifferentials();
   initWhatsAppButtons();
   initFooter();
