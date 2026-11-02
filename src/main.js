@@ -230,12 +230,16 @@ function renderReviews() {
   // Filtrar apenas avaliações com nota estritamente acima de 4 estrelas (> 4)
   const topReviews = barbershopConfig.reviews.filter((rev) => rev.rating > 4);
 
-  container.innerHTML = topReviews.map((rev) => {
+  const reviewsHtml = topReviews.map((rev) => {
     const starCount = Math.floor(rev.rating);
     const starsHtml = Array.from({ length: 5 }, (_, i) => {
       const isFilled = i < starCount;
       return `<span class="${isFilled ? 'text-amber-400' : 'text-zinc-600'}">${icons.star}</span>`;
     }).join('');
+
+    const avatarHtml = rev.avatar
+      ? `<img src="${rev.avatar}" alt="${rev.name}" class="w-10 h-10 rounded-full object-cover border border-zinc-700 shrink-0" loading="lazy" />`
+      : `<div class="w-10 h-10 rounded-full bg-dark-800 border border-zinc-700 flex items-center justify-center font-display font-bold text-white text-sm shrink-0">${rev.name.charAt(0)}</div>`;
 
     return `
       <div class="p-6 rounded-2xl border border-zinc-800 bg-dark-950 flex flex-col justify-between hover:border-zinc-700 transition-all duration-200">
@@ -258,18 +262,54 @@ function renderReviews() {
         </div>
 
         <!-- Rodapé do Card: Cliente e Serviço -->
-        <div class="pt-5 mt-5 border-t border-zinc-850 flex items-center justify-between">
-          <div>
-            <h4 class="font-display font-bold text-white text-sm tracking-wide">${rev.name}</h4>
-            <span class="text-xs text-zinc-400 font-mono mt-0.5 block">${rev.service}</span>
+        <div class="pt-5 mt-5 border-t border-zinc-850 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            ${avatarHtml}
+            <div>
+              <h4 class="font-display font-bold text-white text-sm tracking-wide leading-snug">${rev.name}</h4>
+              <span class="text-xs text-zinc-400 font-mono block">${rev.service}</span>
+            </div>
           </div>
-          <span class="text-[10px] font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-950/30 px-2 py-0.5 rounded">
-            ✓ Verificado
+          <span class="text-[10px] font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-950/30 px-2 py-0.5 rounded shrink-0">
+            ✓ Google
           </span>
         </div>
       </div>
     `;
   }).join('');
+
+  const googleSummaryCard = `
+    <div class="p-6 rounded-2xl border border-zinc-800 bg-dark-900/60 flex flex-col justify-between hover:border-zinc-700 transition-all duration-200">
+      <div>
+        <div class="flex items-center justify-between gap-2 mb-4">
+          <span class="text-[10px] font-mono text-whatsapp border border-whatsapp/20 bg-whatsapp/10 px-2 py-0.5 rounded uppercase tracking-wider">
+            Ficha Oficial Verificada
+          </span>
+          <span class="text-xs text-zinc-400 font-mono">Google Maps</span>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="font-display text-4xl font-extrabold text-white">5.0</span>
+          <div class="flex text-amber-400">
+            ${Array.from({ length: 5 }, () => icons.star).join('')}
+          </div>
+        </div>
+        <h4 class="font-display font-bold text-white text-base mt-2">100% de Avaliações 5 Estrelas</h4>
+        <p class="text-zinc-300 text-xs sm:text-sm font-light leading-relaxed mt-2">
+          Todas as avaliações registradas na ficha oficial do Google Maps possuem nota máxima. Já é cliente? Deixe seu depoimento também.
+        </p>
+      </div>
+
+      <div class="pt-5 mt-5 border-t border-zinc-850">
+        <a href="https://maps.app.goo.gl/EcNX3bJfGypRCKJ58?g_st=ac" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 text-xs font-semibold text-white hover:text-whatsapp transition-colors">
+          <span>Ver avaliações no Google Maps</span>
+          ${icons['arrow-right']}
+        </a>
+      </div>
+    </div>
+  `;
+
+  container.innerHTML = reviewsHtml + googleSummaryCard;
 }
 
 /**
