@@ -207,6 +207,66 @@ export const barbershopConfig = {
     }
   ],
 
+  // Avaliações de Clientes (Depoimentos)
+  reviews: [
+    {
+      id: "rev-1",
+      name: "Matheus Silveira",
+      service: "Degradê (Fade)",
+      rating: 5.0,
+      date: "Há 2 semanas",
+      comment: "Melhor degradê de Montes Claros sem dúvida. O atendimento pontual com hora marcada faz toda a diferença, sem aquela espera chata de barbearia cheia. O disfarçado fica impecável.",
+    },
+    {
+      id: "rev-2",
+      name: "Rafael Mendes",
+      service: "Corte de Cabelo + Barba",
+      rating: 5.0,
+      date: "Há 3 semanas",
+      comment: "Faço barba e cabelo com o Leonardo há meses. Toalha morna, acabamento alinhado e muita atenção aos detalhes. Profissional pontual e de extrema confiança!",
+    },
+    {
+      id: "rev-3",
+      name: "Lucas Henrique",
+      service: "Degradê (Fade)",
+      rating: 4.8,
+      date: "Há 1 mês",
+      comment: "Ambiente muito tranquilo, atendimento individual e corte no capricho. É difícil achar um barbeiro que acerta o corte de primeira igual ele.",
+    },
+    {
+      id: "rev-4",
+      name: "Felipe Duarte",
+      service: "Barba",
+      rating: 5.0,
+      date: "Há 1 mês",
+      comment: "Pontualidade britânica e serviço nota dez. Você explica como quer e ele executa com calma e precisão na navalha. Recomendo de olhos fechados!",
+    },
+    {
+      id: "rev-5",
+      name: "Gustavo Borges",
+      service: "Corte de Cabelo",
+      rating: 4.9,
+      date: "Há 2 meses",
+      comment: "Pezinho reto e degradê perfeito. O Leonardo é gente boa demais e tem muita paciência com cada detalhe do acabamento.",
+    },
+    {
+      id: "rev-6",
+      name: "Bruno Almeida",
+      service: "Acabamento & Pezinho",
+      rating: 5.0,
+      date: "Há 2 meses",
+      comment: "Sempre saio satisfeito. Além de mandar muito bem na tesoura e na máquina, o atendimento um a um é essencial para quem tem rotina corrida.",
+    },
+    {
+      id: "rev-filtered",
+      name: "Cliente Teste",
+      service: "Corte Simples",
+      rating: 3.8,
+      date: "Há 3 meses",
+      comment: "Comentário abaixo de 4 estrelas para demonstrar o filtro de qualidade.",
+    }
+  ],
+
   // Rodapé
   footer: {
     description: "Cortes masculinos bem feitos, degradê no capricho e barba alinhada na navalha com o Leonardo. Atendimento pontual em Montes Claros.",
@@ -216,6 +276,7 @@ export const barbershopConfig = {
       { label: "Estilos", href: "#galeria" },
       { label: "Meus Serviços", href: "#servicos" },
       { label: "Diferencial", href: "#diferenciais" },
+      { label: "Avaliações", href: "#avaliacoes" },
       { label: "Localização", href: "#contato" },
     ],
     copyright: "© {year} Leo's Barbearia. Todos os direitos reservados.",

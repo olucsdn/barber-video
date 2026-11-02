@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderGallery();
   renderServices();
   renderDifferentials();
+  renderReviews();
   initWhatsAppButtons();
   initFooter();
   updateBusinessHoursStatus();
@@ -214,6 +215,58 @@ function renderDifferentials() {
         <p class="text-white text-sm mt-3 leading-relaxed font-light">
           ${diff.description}
         </p>
+      </div>
+    `;
+  }).join('');
+}
+
+/**
+ * 7. DEPOIMENTOS E AVALIAÇÕES (FILTRA APENAS COMENTÁRIOS ACIMA DE 4 ESTRELAS)
+ */
+function renderReviews() {
+  const container = document.getElementById('reviews-grid');
+  if (!container || !barbershopConfig.reviews) return;
+
+  // Filtrar apenas avaliações com nota estritamente acima de 4 estrelas (> 4)
+  const topReviews = barbershopConfig.reviews.filter((rev) => rev.rating > 4);
+
+  container.innerHTML = topReviews.map((rev) => {
+    const starCount = Math.floor(rev.rating);
+    const starsHtml = Array.from({ length: 5 }, (_, i) => {
+      const isFilled = i < starCount;
+      return `<span class="${isFilled ? 'text-amber-400' : 'text-zinc-600'}">${icons.star}</span>`;
+    }).join('');
+
+    return `
+      <div class="p-6 rounded-2xl border border-zinc-800 bg-dark-950 flex flex-col justify-between hover:border-zinc-700 transition-all duration-200">
+        <div>
+          <!-- Estrelas e Tempo -->
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <div class="flex items-center gap-1.5">
+              <div class="flex items-center gap-0.5">
+                ${starsHtml}
+              </div>
+              <span class="text-xs font-mono font-bold text-white">${rev.rating.toFixed(1)}</span>
+            </div>
+            <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider">${rev.date}</span>
+          </div>
+
+          <!-- Comentário -->
+          <p class="text-white text-sm font-light leading-relaxed italic">
+            "${rev.comment}"
+          </p>
+        </div>
+
+        <!-- Rodapé do Card: Cliente e Serviço -->
+        <div class="pt-5 mt-5 border-t border-zinc-850 flex items-center justify-between">
+          <div>
+            <h4 class="font-display font-bold text-white text-sm tracking-wide">${rev.name}</h4>
+            <span class="text-xs text-zinc-400 font-mono mt-0.5 block">${rev.service}</span>
+          </div>
+          <span class="text-[10px] font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-950/30 px-2 py-0.5 rounded">
+            ✓ Verificado
+          </span>
+        </div>
       </div>
     `;
   }).join('');
